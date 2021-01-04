@@ -5,10 +5,9 @@
 }
 
 .content pre {
-  overflow-x: auto;
+  overflow: auto;
   padding: 0.7em 1em;
-  white-space: pre;
-  word-wrap: normal;
+  max-width: calc(100vw - 20px - 2em);
   color: #4a4a4a;
   font-family: "Source Code Pro", monospace;
 }
