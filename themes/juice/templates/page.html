@@ -1,0 +1,20 @@
+{% import "_macros.html" as macros %}
+{% extends "index.html" %}
+
+{% block title %}{{ page.title }} | {{ super() }}{% endblock title %}
+
+{% block header %}
+<header>
+  {{ macros::render_header() }}
+</header>
+{% endblock header %}
+
+{% block content %}
+{{ page.content | safe }}
+
+{% if page.heavier %}
+  <div class="next-page">
+    <a href="{{ page.heavier.permalink }}">Continue with {{ page.heavier.title }} &raquo;</a>
+  </div>
+{% endif %}
+{% endblock content %}

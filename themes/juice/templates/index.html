@@ -1,0 +1,145 @@
+{% import "_macros.html" as macros %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    >
+    {% include "_variables.html" %}
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+      rel="stylesheet"> 
+    <link
+      href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,600&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="{{ get_url(path="juice.css") }}">
+    {% block head %}{% endblock head %}
+  </head>
+
+  <body>
+    {% block header %}
+
+    <header class="pos-absolute" style="background-color: transparent">
+      {{ macros::render_header() }}
+    </header>
+
+    <div class="hero">
+      {% block hero %}
+        Empty Hero
+      {% endblock hero %}
+    </div>
+
+    {% endblock header %}
+
+    <main>
+      {% block toc %}
+        {% if section.toc %}
+          {% set toc = section.toc %}
+        {% elif page.toc %}
+          {% set toc = page.toc %}
+        {% endif %}
+        {% if section.ancestors %}
+          {% set ancestors = section.ancestors %}
+        {% elif page.ancestors %}
+          {% set ancestors = page.ancestors %}
+        {% endif %}
+        {% if ancestors and ancestors[1]  %}
+          {% set main_section = get_section(path=ancestors[1]) %}
+        {% elif ancestors and section %}
+          {% set main_section = section %}
+        {% else %}
+          {% set main_section = false %}
+        {% endif %}
+        <div class="toc">
+          <div class="toc-sticky">
+            {% set want_toc_hr = false %}
+            {% if main_section and main_section.pages %}
+              <div class="toc-item">
+                <a class="subtext{% if main_section.path == current_path %} current{% endif %}" href="{{ main_section.permalink }}">{{ main_section.title }}</a>
+              </div>
+              {% for subpage in main_section.pages %}
+              <div class="toc-item">
+                <a class="subtext{% if subpage.path == current_path %} current{% endif %}" href="{{ subpage.permalink }}">{{ subpage.title }}</a>
+              </div>
+              {% endfor %}
+              {% set want_toc_hr = true %}
+            {% endif %}
+            {% if toc and toc[0].children %}
+              {% if want_toc_hr %}
+              <hr>
+              {% endif %}
+              {% for h in toc %}
+                <div class="toc-item">
+                  <a class="current" href="{{ h.permalink }}">{{ h.title }}</a>
+                </div>
+                {% if h.children %}
+                  {% for h2 in h.children %}
+                  <div class="toc-item">
+                    <a class="subtext" href="{{ h2.permalink }}">{{ h2.title }}</a>
+                  </div>
+                  {% if h2.children %}
+                    {% for h3 in h2.children %}
+                    <div class="toc-item-child">
+                      <a class="small-subtext" href="{{ h3.permalink }}">{{ h3.title }}</a>
+                    </div>
+                    {% endfor %}
+                  {% endif %}
+                  {% endfor %}
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+      {% endblock toc %}
+
+      <div class="content text">
+        {% block content %}
+        <a id="features"></a>
+        {{ section.content | safe }}
+        {% endblock content %}
+      </div>
+    </main>
+
+    {% block footer %}{% endblock footer %}
+  </body>
+  <script>
+    function highlightNav(heading) {
+      let pathname = location.pathname;
+      document.querySelectorAll(".toc a").forEach((item) => {
+        item.classList.remove("active");
+      });
+      document
+        .querySelector(".toc a[href$='" + pathname + "#" + heading + "']")
+        .classList.add("active");
+    }
+
+    let currentHeading = "";
+    window.onscroll = function () {
+      let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+      let elementArr = [];
+
+      h.forEach((item) => {
+        if (item.id !== "") {
+          elementArr[item.id] = item.getBoundingClientRect().top;
+        }
+      });
+      elementArr.sort();
+      for (let key in elementArr) {
+        if (!elementArr.hasOwnProperty(key)) {
+          continue;
+        }
+        if (elementArr[key] > 0 && elementArr[key] < 300) {
+          if (currentHeading !== key) {
+            highlightNav(key);
+            currentHeading = key;
+          }
+          break;
+        }
+      }
+    };
+  </script>
+</html>

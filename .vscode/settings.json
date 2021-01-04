@@ -1,0 +1,11 @@
+{
+  "[json]": {
+    "editor.tabSize": 2
+  },
+  "[tera]": {
+    "editor.formatOnSave": false
+  },
+  "files.associations": {
+    "*.html": "tera"
+  },
+}

@@ -1,0 +1,49 @@
+.content {
+  padding: 0 40px;
+  display: block;
+  font-size: 18px;
+}
+
+.content pre {
+  overflow-x: auto;
+  padding: 0.7em 1em;
+  white-space: pre;
+  word-wrap: normal;
+  color: #4a4a4a;
+  font-family: "Source Code Pro", monospace;
+}
+
+.content code {
+  background-color: var(--light-color);
+  color: #4a4a4a;
+  font-weight: 400;
+  padding: 0.05em 0.21em;
+  border-radius: 2px;
+  font-family: "Source Code Pro", monospace;
+}
+
+.content pre code {
+  padding: 0;
+  background: transparent;
+}
+
+.content a {
+  color: var(--primary-link-color);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.content blockquote {
+  border-left: #e2dede 8px solid;
+  margin: 0;
+  background-color: #ececec;
+  padding: 0 20px;
+}
+
+.content img.cast, .content img.snap {
+  width: 100%;
+  border: 3px solid var(--primary-color);
+  border-radius: 6px;
+}
