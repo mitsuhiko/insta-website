@@ -1,15 +1,15 @@
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.ref != 'refs/heads/master'
+    if: github.ref != 'refs/heads/main'
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@master
+        uses: actions/checkout@main
       - name: 'Build only' 
         uses: shalzz/zola-deploy-action@v0.12.0
         env:
@@ -19,10 +19,10 @@ jobs:
           BUILD_ONLY: true
   build_and_deploy:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@master
+        uses: actions/checkout@main
       - name: 'Build and deploy'
         uses: shalzz/zola-deploy-action@v0.12.2
         env:
