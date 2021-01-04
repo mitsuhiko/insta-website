@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8">
     <title>{% block title %}{{ config.title }}{% endblock title %}</title>
     <meta
       name="viewport"
@@ -107,41 +107,41 @@
     </main>
 
     {% block footer %}{% endblock footer %}
-  </body>
-  <script>
-    function highlightNav(heading) {
-      let pathname = location.pathname;
-      document.querySelectorAll(".toc a").forEach((item) => {
-        item.classList.remove("active");
-      });
-      document
-        .querySelector(".toc a[href$='" + pathname + "#" + heading + "']")
-        .classList.add("active");
-    }
-
-    let currentHeading = "";
-    window.onscroll = function () {
-      let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
-      let elementArr = [];
-
-      h.forEach((item) => {
-        if (item.id !== "") {
-          elementArr[item.id] = item.getBoundingClientRect().top;
-        }
-      });
-      elementArr.sort();
-      for (let key in elementArr) {
-        if (!elementArr.hasOwnProperty(key)) {
-          continue;
-        }
-        if (elementArr[key] > 0 && elementArr[key] < 300) {
-          if (currentHeading !== key) {
-            highlightNav(key);
-            currentHeading = key;
-          }
-          break;
-        }
+    <script>
+      function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+          item.classList.remove("active");
+        });
+        document
+          .querySelector(".toc a[href$='" + pathname + "#" + heading + "']")
+          .classList.add("active");
       }
-    };
-  </script>
+
+      let currentHeading = "";
+      window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach((item) => {
+          if (item.id !== "") {
+            elementArr[item.id] = item.getBoundingClientRect().top;
+          }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+          if (!elementArr.hasOwnProperty(key)) {
+            continue;
+          }
+          if (elementArr[key] > 0 && elementArr[key] < 300) {
+            if (currentHeading !== key) {
+              highlightNav(key);
+              currentHeading = key;
+            }
+            break;
+          }
+        }
+      };
+    </script>
+  </body>
 </html>
