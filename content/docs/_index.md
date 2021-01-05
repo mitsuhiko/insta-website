@@ -16,6 +16,7 @@ all of which you can find documented here.
 * [Advanced Features](./advanced/) to learn about more advanced features such as globbing.
 * [Settings](./settings/) for how you can customize insta's behavior.
 * [Cargo Insta](./cli/) for how to use the companion tool.
+* [VS Code Extension](./vscode/) if you want to use insta with Visual Studio Code.
 
 In addition have a look at the in-depth [API documentation](https://docs.rs/insta)
 which covers the entire API of the crate.
