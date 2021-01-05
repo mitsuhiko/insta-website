@@ -126,6 +126,23 @@
         <a id="features"></a>
         {{ section.content | safe }}
         {% endblock content %}
+
+        {% if page %}
+          {% set source_path = page.relative_path %}
+        {% elif section %}
+          {% set source_path = section.relative_path %}
+        {% else %}
+          {% set source_path = "" %}
+        {% endif %}
+
+        {% if source_path %}
+          <div class="source-hint">
+            Found an issue?
+            You can
+            <a href="https://github.com/{{ config.extra.website_github_repo }}/edit/main/content/{{ source_path }}">edit this page</a>
+            on GitHub.
+          </div>
+        {% endif %}
       </div>
     </main>
 

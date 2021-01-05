@@ -20,12 +20,13 @@ juice_logo_name = "Insta"
 juice_logo_path = "icon.png"
 rust_crate = "insta"
 github_repo = "mitsuhiko/insta"
+website_github_repo = "mitsuhiko/insta-website"
 twitter_handle = "@mitsuhiko"
 site_description = "Insta is an enjoyable snapshot testing tool for Rust."
 page_menu = [
     { title = "Docs", link = "/docs/" },
     { title = "Changelog", link = "/changelog/" },
     { title = "API", link = "https://docs.rs/insta" },
-    { title = "Github", link = "https://github.com/mitsuhiko/insta" },
+    { title = "GitHub", link = "https://github.com/mitsuhiko/insta" },
     { title = "Crate", link = "https://crates.io/crates/insta" },
 ]

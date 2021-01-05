@@ -250,3 +250,11 @@ footer {
     font-size: 16px;
   }
 }
+
+.source-hint {
+  border-top: 3px solid var(--primary-color);
+  padding-top: 0.5em;
+  margin-top: 4em;
+  text-align: right;
+  font-size: 0.9em;
+}
