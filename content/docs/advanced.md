@@ -48,6 +48,25 @@ the `INSTA_OUTPUT` environment variable.  The following values are possible:
 * `minimal`: like `summary` but more minimal
 * `none`: insta will not output any extra information
 
+## Disabling Assertion Failure
+
+By default the tests will fail when the snapshot assertion fails.  However
+if a test produces more than one snapshot it can be useful to force a test
+to pass so that all new snapshots are created in one go.
+
+This can be enabled by setting `INSTA_FORCE_PASS` to `1`:
+
+```
+INSTA_FORCE_PASS=1 cargo test --no-fail-fast
+```
+
+A better way to do this is to run `cargo insta test --review` which will
+run all tests with force pass and then bring up the review tool:
+
+```
+cargo insta test --review
+```
+
 ## Deleting Unused Snapshots
 
 Insta only has limited support for detecting unused snapshot files.  The

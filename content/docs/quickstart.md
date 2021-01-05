@@ -80,39 +80,47 @@ cargo insta review
 
 For more information see [cargo-insta](../cli/) documentation.
 
-## Snapshot Updating
+## Inline Snapshots
 
-During test runs snapshots will be updated according to the `INSTA_UPDATE`
-environment variable.  The default is `auto` which will write all new
-snapshots into `.snap.new` files if no CI is detected so that `cargo-insta`
-can pick them up.  Normally you don't have to change this variable.
+Snapshots can also be stored inline.  In that case the format
+for the snapshot macros is `assert_snapshot!(reference_value, @"snapshot")`.
+The leading at sign (`@`) indicates that the following string is the
+reference value.  `cargo-insta` will then update that string with the new
+value on review.
 
-`INSTA_UPDATE` modes:
+This is the example above with inline snapshots:
 
-- `auto`: the default. `no` for CI environments or `new` otherwise
-- `always`: overwrites old snapshot files with new ones unasked
-- `unseen`: behaves like `always` for new snapshots and `new` for others
-- `new`: write new snapshots into `.snap.new` files
-- `no`: does not update snapshot files at all (just runs tests)
+```rust
+fn split_words(s: &str) -> Vec<&str> {
+    s.split_whitespace().collect()
+}
 
-When `new` or `auto` is used as mode the `cargo-insta` command can be used
-to review the snapshots conveniently.
-
-## Test Assertions
-
-By default the tests will fail when the snapshot assertion fails.  However
-if a test produces more than one snapshot it can be useful to force a test
-to pass so that all new snapshots are created in one go.
-
-This can be enabled by setting `INSTA_FORCE_PASS` to `1`:
-
-```
-INSTA_FORCE_PASS=1 cargo test --no-fail-fast
+#[test]
+fn test_split_words() {
+    let words = split_words("hello from the other side");
+    insta::assert_yaml_snapshot!(words, @"");
+}
 ```
 
-A better way to do this is to run `cargo insta test --review` which will
-run all tests with force pass and then bring up the review tool:
+After the initial test failure you can run `cargo insta review` to
+accept the change.  The file will then be updated automatically and the
+reference value will be placed in the macro invocation like this:
 
-```
-cargo insta test --review
+```rust
+fn split_words(s: &str) -> Vec<&str> {
+    s.split_whitespace().collect()
+}
+
+#[test]
+fn test_split_words() {
+    let words = split_words("hello from the other side");
+    insta::assert_yaml_snapshot!(words, @r###"
+    ---
+    - hello
+    - from
+    - the
+    - other
+    - side
+    "###);
+}
 ```
