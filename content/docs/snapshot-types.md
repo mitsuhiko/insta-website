@@ -40,7 +40,7 @@ fn test_something() {
 }
 ```
 
-This creats two snapshots named `something` and `somethign-2`.
+This creats two snapshots named `something` and `something-2`.
 
 ## Named snapshots
 
