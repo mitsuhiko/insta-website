@@ -67,6 +67,24 @@ run all tests with force pass and then bring up the review tool:
 cargo insta test --review
 ```
 
+## Controlling Snapshot Updating
+
+During test runs snapshots will be updated according to the `INSTA_UPDATE`
+environment variable.  The default is `auto` which will write all new
+snapshots into `.snap.new` files if no CI is detected so that `cargo-insta`
+can pick them up.  Normally you don't have to change this variable.
+
+`INSTA_UPDATE` modes:
+
+- `auto`: the default. `no` for CI environments or `new` otherwise
+- `always`: overwrites old snapshot files with new ones unasked
+- `unseen`: behaves like `always` for new snapshots and `new` for others
+- `new`: write new snapshots into `.snap.new` files
+- `no`: does not update snapshot files at all (just runs tests)
+
+When `new` or `auto` is used as mode the `cargo-insta` command can be used
+to review the snapshots conveniently.
+
 ## Deleting Unused Snapshots
 
 Insta only has limited support for detecting unused snapshot files.  The
