@@ -6,8 +6,15 @@ weight = 4
 # Snapshot Types
 
 Insta has two major types of snapshots: named and inline snapshots.  The former
-are placed as `.snap` files in the `snapshots` folder, the latter are stored
-inline in string literals in the `.rs` files.
+are placed as separate `.snap` files, the latter are stored inline in string
+literals in the `.rs` files.
+
+Named snapshots are stored in the `snapshots` folder right next to the test file
+where this is used.  The name of the file is `<module>__<name>.snap` where
+the `name` of the snapshot.  Snapshots can either be explicitly named or the
+name is derived from the test name.
+
+The format of snapshot files [is documented here](../snapshot-files/).
 
 ## Implicitly Named Snapshots
 

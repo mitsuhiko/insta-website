@@ -50,7 +50,7 @@ ways:
 
 For most real world applications the recommendation is to use YAML snapshots
 of serializable values.  This is because they look best under version control
-and the diff viewer and support [redactions](#redactions).
+and the diff viewer and support [redactions](../redactions/).
 
 The following example demonstrates a very simple test case:
 

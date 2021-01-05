@@ -21,6 +21,8 @@ for you.
   random identifiers, timestamps or others) you can instruct insta to redact these parts.
 * **Flexible formats**: you can pick between snapshoting into different formats
   such as JSON, YAML, TOML, CSV or others.
+* **Editor Support**: insta also provides a [VS Code Extension](https://marketplace.visualstudio.com/items?itemName=mitsuhiko.insta)
+  that lets you review snapshots right from within your editor.
 * **Apache-2.0 licensed**: because the best tools are Open Source under a convenient license.
 
 ## What Does This Look Like?
