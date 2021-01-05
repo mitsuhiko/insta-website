@@ -17,6 +17,29 @@
       href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,600&display=swap"
       rel="stylesheet">
     <link rel="stylesheet" href="{{ get_url(path="juice.css") }}">
+    {% if current_path == "/" %}
+      {% set og_title = config.title %}
+      {% set og_description = config.extra.site_description %}
+    {% elif section %}
+      {% set og_title = section.title %}
+      {% set og_description = section.content|striptags|truncate(length=100) %}
+    {% elif page %}
+      {% set og_title = page.title %}
+      {% set og_description = page.content|striptags|truncate(length=100) %}
+    {% else %}
+      {% set og_title = config.title %}
+      {% set og_description = "" %}
+    {% endif %}
+    <meta property="title" content="{{ og_title }}">
+    <meta property="og:title" content="{{ og_title }}">
+    <meta property="og:site_name" content="{{ config.title }}">
+    <meta property="og:image" content="{{ get_url(path="logo.png") }}" />
+    <meta name="twitter:site" content="{{ config.extra.twitter_handle }}">
+    <meta name="twitter:title" content="{{ og_title }}" />
+    <meta name="description" content="{{ og_description }}">
+    <meta name="og:description" content="{{ og_description }}">
+    <meta name="twitter:description" content="{{ og_description }}">
+    <meta name="twitter:card" content="summary">
     {% block head %}{% endblock head %}
   </head>
 
