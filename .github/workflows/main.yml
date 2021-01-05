@@ -14,7 +14,6 @@ jobs:
         uses: shalzz/zola-deploy-action@v0.12.0
         env:
           BUILD_DIR: .
-          TOKEN: ${{ secrets.TOKEN }}
           BUILD_ONLY: true
   build_and_deploy:
     runs-on: ubuntu-latest
