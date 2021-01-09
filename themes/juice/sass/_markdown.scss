@@ -63,3 +63,17 @@
     margin: 0;
   }
 }
+
+@media screen and (max-width: 1279px) {
+  .content div.termcast {
+    padding: 14px;
+    box-shadow: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content div.termcast {
+    padding: 8px;
+    box-shadow: none;
+  }
+}
