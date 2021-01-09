@@ -78,6 +78,8 @@ you interactively review them:
 cargo insta review
 ```
 
+<div class="termcast"><img src="../quickstart.svg" alt=""></div>
+
 For more information see [cargo-insta](../cli/) documentation.
 
 ## Inline Snapshots
