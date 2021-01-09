@@ -41,8 +41,11 @@ Note that no reference value is provided.  Instead the reference value is placed
 on the first test run in a separate snapshot file.  Insta will automatically
 manage that snapshot for you.
 
-<img src="review.gif" class="cast" alt="">
+## Test Workflow
 
+This is what this process looks like in an actual example:
+
+<div class="termcast"><img src="demo.svg" alt=""></div>
 
 ## Learn More
 

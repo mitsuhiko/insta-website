@@ -47,3 +47,19 @@
   border: 3px solid var(--primary-color);
   border-radius: 6px;
 }
+
+.content div.termcast {
+  border-top: 5px solid var(--primary-color);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 24px;
+  background: #021a2d;
+  line-height: 0;
+  box-shadow: inset -10px -10px 10px #010a12;
+
+  img {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+}
