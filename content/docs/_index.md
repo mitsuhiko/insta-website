@@ -1,6 +1,9 @@
 +++
 title = "Overview"
 sort_by = "weight"
+
+[extra]
+external_nav = [["https://docs.rs/insta", "API Docs"]]
 +++
 
 # Documentation

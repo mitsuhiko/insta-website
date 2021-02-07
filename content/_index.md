@@ -5,6 +5,11 @@ sort_by = "weight"
 
 # Hello Snapshot Testing
 
+[![Build Status](https://github.com/mitsuhiko/insta/workflows/Tests/badge.svg?branch=master)](https://github.com/mitsuhiko/insta/actions?query=workflow%3ATests)
+[![Crates.io](https://img.shields.io/crates/d/insta.svg)](https://crates.io/crates/insta)
+[![License](https://img.shields.io/github/license/mitsuhiko/insta)](https://github.com/mitsuhiko/insta/blob/master/LICENSE)
+[![Documentation](https://docs.rs/insta/badge.svg)](https://docs.rs/insta)
+
 Snapshots tests (also sometimes called approval tests) are tests that assert
 values against a reference value (the snapshot).  Think of it as a supercharged
 version of `assert_eq!`.  It lets you compare a value against a reference
@@ -23,6 +28,8 @@ for you.
   such as JSON, YAML, TOML, CSV or others.
 * **Editor Support**: insta also provides a [VS Code Extension](https://marketplace.visualstudio.com/items?itemName=mitsuhiko.insta)
   that lets you review snapshots right from within your editor.
+* **Pretty Diffs**: insta renders beautiful snapshot diffs right in your
+  terminal with the help of the [similar](/similar/) crate.
 * **Apache-2.0 licensed**: because the best tools are Open Source under a convenient license.
 
 ## What Does This Look Like?

@@ -115,6 +115,18 @@ main {
     font-weight: bold;
   }
 
+  .toc-item a.external::after {
+    content: "";
+    display: inline-block;
+    background: url("/link.svg") no-repeat;
+    background-size: 100% 100%;
+    width: 14px!important;
+    height: 14px!important;
+    padding: 0;
+    margin: 2px 0 0 5px;
+    position: absolute;
+  }
+
   .toc-item a.active, .toc-item-child a.active {
     color: var(--toc-highlight-text-color);
     background: var(--toc-highlight-background-color);

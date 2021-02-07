@@ -91,6 +91,13 @@
                 <a class="subtext{% if subpage.path == current_path %} current{% endif %}" href="{{ subpage.permalink }}">{{ subpage.title }}</a>
               </div>
               {% endfor %}
+              {% if main_section.extra.external_nav %}
+                {% for subpage in main_section.extra.external_nav %}
+                <div class="toc-item">
+                  <a class="subtext external" href="{{ subpage[0] }}">{{ subpage[1] }}</a>
+                </div>
+                {% endfor %}
+              {% endif %}
               {% set want_toc_hr = true %}
             {% endif %}
             {% if toc and toc[0].children %}
