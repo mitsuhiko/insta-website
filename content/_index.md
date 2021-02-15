@@ -30,6 +30,7 @@ for you.
   that lets you review snapshots right from within your editor.
 * **Pretty Diffs**: insta renders beautiful snapshot diffs right in your
   terminal with the help of the [similar](/similar/) crate.
+* Support for Rust 1.43 or later.
 * **Apache-2.0 licensed**: because the best tools are Open Source under a convenient license.
 
 ## What Does This Look Like?
