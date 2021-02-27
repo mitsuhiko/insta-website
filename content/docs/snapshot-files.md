@@ -45,3 +45,8 @@ The following fields exist in the header:
 The body is always in whatever format [was serialized](../serializers/). This
 can be YAML, JSON or anything else.  Syntax highlighters should be liberal here
 and assume a variation of YAML and RON.
+
+## Newlines
+
+Snapshot files are normalized to unix newlines (LF) before diffing and will always
+be generated with unix newlines when saving.
