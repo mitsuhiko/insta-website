@@ -63,3 +63,4 @@ Want to learn more?
   [Snapshot Testing with Insta](https://www.youtube.com/embed/rCHrMqE4JOY)
 * Read [the quickstart](/docs/quickstart) for more information
 * Read [the API documentation](https://docs.rs/insta) for a deep dive on the API
+* For practices and lessons learned in other langauges: [Approval Test resources](https://approvaltests.com/resources/)
