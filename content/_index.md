@@ -10,7 +10,7 @@ sort_by = "weight"
 [![License](https://img.shields.io/github/license/mitsuhiko/insta)](https://github.com/mitsuhiko/insta/blob/master/LICENSE)
 [![Documentation](https://docs.rs/insta/badge.svg)](https://docs.rs/insta)
 
-Snapshots tests (also sometimes called approval tests) are tests that assert
+Snapshots tests (also sometimes called [approval tests](https://approvaltests.com)) are tests that assert
 values against a reference value (the snapshot).  Think of it as a supercharged
 version of `assert_eq!`.  It lets you compare a value against a reference
 value but unlike simple assertions the reference value is managed by `insta`
