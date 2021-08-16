@@ -92,6 +92,9 @@ The test command lets you execute all tests (similar to `cargo test`) but
 forces all snapshot tests to pass so that they are collected.  It accepts
 the same arguments as the normal `cargo test` command.
 
+Additionally extra comments can be passed to `cargo test` when separated
+with `--`.
+
 **Options:**
 
 * `-p` / `--package`: selects the package to run tests for.
