@@ -109,3 +109,10 @@ cargo test
 rg --files -lg '*.snap' "$(pwd)" | grep -vFf "$INSTA_SNAPSHOT_REFERENCES_FILE" | xargs rm
 rm -f $INSTA_SNAPSHOT_REFERENCES_FILE
 ```
+
+## Workspace Root
+
+By default insta will use the `cargo` binary to detect the workspace root. In
+some situations this might not work. In that case you can export the
+`INSTA_WORKSPACE_ROOT` environment variable and explicitly point insta to the
+root of the workspace.
