@@ -29,6 +29,7 @@ They can also be configured [via settings](../settings/).
 The following selectors exist:
 
 - `.key`: selects the given key
+- `.$key`: indexes into the key of a collection.  This can be useful to redact compound keys.
 - `["key"]`: alternative syntax for keys
 - `[index]`: selects the given index in an array
 - `[]`: selects all items on an array
