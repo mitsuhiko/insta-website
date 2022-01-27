@@ -97,3 +97,38 @@ insta::assert_yaml_snapshot!(&User {
 The two arguments to the callback are of type {{ api_link(item="internals.Content", type="enum") }}
 and {{ api_link(item="internals.ContentPath", type="struct") }}.  You can find
 more information in the API documentation about how they work.
+
+## Sorted Redactions
+
+A special feature of the redaction support is the ability to sort a map or sequence at a selector.
+This is particularly useful if you're working with a `HashSet` or something similar that has non
+deterministic serialization order but you need to assert on it.  As `serde` does not let insta
+distinguish between a vector and a set, no automatic ordering can be provided without causing issues
+for the general case.
+
+For sorted redactions you can use the {{ api_link(item="sorted_redaction", type="fn") }} function:
+
+```rust
+use std::collections::HashSet;
+use serde::Serialize;
+
+#[derive(Debug, Serialize)]
+pub struct User {
+    id: u64,
+    username: String,
+    flags: HashSet<String>,
+}
+
+insta::assert_json_snapshot!(
+    &User {
+        id: 122,
+        username: "jason_doe".to_string(),
+        flags: vec!["zzz".into(), "foo".into(), "aha".into(), "is_admin".into()]
+            .into_iter()
+            .collect(),
+    },
+    {
+        ".flags" => insta::sorted_redaction()
+    }
+);
+```
