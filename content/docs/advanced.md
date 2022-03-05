@@ -94,7 +94,7 @@ so it cannot spot which files are actually unreferenced.
 There are two solutions for this problem.  One is to use `cargo-insta`'s
 `test` command which accepts a `--delete-unreferenced-snapshots` flag:
 
-```text
+```
 cargo insta test --delete-unreferenced-snapshots
 ```
 
