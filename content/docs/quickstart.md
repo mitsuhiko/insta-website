@@ -43,8 +43,7 @@ ways:
   using one of the following macros: {{ api_link(item="assert_json_snapshot", type="macro") }},
   {{ api_link(item="assert_yaml_snapshot", type="macro") }},
   {{ api_link(item="assert_toml_snapshot", type="macro") }},
-  {{ api_link(item="assert_ron_snapshot", type="macro") }}, or
-  {{ api_link(item="assert_csv_snapshot", type="macro") }}.
+  {{ api_link(item="assert_ron_snapshot", type="macro") }}, or {{ api_link(item="assert_csv_snapshot", type="macro") }}.
 * You can instruct insta to use the `Debug` representation of a value by using
   {{ api_link(item="assert_debug_snapshot", type="macro") }}.
 
