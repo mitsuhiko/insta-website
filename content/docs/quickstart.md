@@ -79,6 +79,21 @@ cargo insta review
 
 <div class="termcast"><img src="../quickstart.svg" alt=""></div>
 
+You can run your tests as normal with `cargo test` but if you have multiple
+snapshot assertions in a single function you might want to use `cargo insta
+test` instead which collects all snapshot changes in one go.
+
+```bash
+cargo insta test
+cargo insta review
+```
+
+The above can be combined into a single command as well:
+
+```
+cargo insta test --review
+```
+
 For more information see [cargo-insta](../cli/) documentation.
 
 ## Inline Snapshots
