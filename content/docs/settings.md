@@ -13,7 +13,7 @@ Settings are always bound to a thread and some default settings are always
 available.  These settings can be changed and influence how insta behaves on
 that thread.  They can either temporarily or permanently changed.
 
-Some of the settings can be changed but shuoldn't as it will make it harder
+Some of the settings can be changed but shouldn't as it will make it harder
 for tools like cargo-insta or an editor integration to locate the snapshot
 files.
 
