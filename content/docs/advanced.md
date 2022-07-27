@@ -37,6 +37,34 @@ glob!("inputs/*.txt", |path| {
 The path to the glob macro is relative to the location of the test
 file.  It uses the `globset` crate for actual glob operations.
 
+## Custom Descriptions and Infos
+
+Sometimes the information shown in the insta review screen is insufficient for
+making decisions when reviewing.  Insta provides two additional flags that are
+persisted in snapshot files: an `info` object and a `description` string.  Both
+are show on the review screen.
+
+Example:
+
+```rust
+#[derive(serde::Serialize)]
+pub struct Info {
+    env: HashMap<&'static str, &'static str>,
+    cmdline: Vec<&'static str>,
+}
+let info = Info {
+    env: From::from([("ENVIRONMENT", "production")]),
+    cmdline: vec!["my-tool", "run"],
+};
+
+with_settings!({
+    description => "The result from invoking my-tool run",
+    info => &info
+}, {
+    assert_yaml_snapshot!(run_tool());
+});
+```
+
 ## Test Output Control
 
 Insta by default will output quite a lot of information as tests run.  For
