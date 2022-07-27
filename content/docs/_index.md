@@ -16,6 +16,7 @@ all of which you can find documented here.
 * [Serializers](./serializers/) to learn about the different serializer choices.
 * [Snapshot files](./snapshot-files/) documents the snapshot file format.
 * [Redactions](./redactions/) to learn about the snapshot redactions feature.
+* [Filters](./filters/) to learn about the snapshot string filtering feature.
 * [Advanced Features](./advanced/) to learn about more advanced features such as globbing.
 * [Settings](./settings/) for how you can customize insta's behavior.
 * [Patterns](./patterns/) common patterns for using insta.

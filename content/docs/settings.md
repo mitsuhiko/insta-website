@@ -1,6 +1,6 @@
 +++
 title = "Settings"
-weight = 7
+weight = 9
 +++
 
 # Settings
