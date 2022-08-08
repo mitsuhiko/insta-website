@@ -10,10 +10,10 @@ introduction to how to be successful with insta.
 
 ## Installation
 
-The recommended way is to add the dependency with `cargo-edit` if you have it:
+The recommended way is to add the dependency with `cargo add`:
 
 ```
-cargo add --dev insta
+cargo add --dev insta --features yaml
 ```
 
 Alternatively edit your `Cargo.toml` manually and add `insta` as manual
@@ -21,7 +21,7 @@ dependency:
 
 ```toml
 [dev-dependencies]
-insta = "{{ crate_version(crate="insta") }}"
+insta = { version = "{{ crate_version(crate="insta") }}", features = ["yaml"] }
 ```
 
 And for an improved review experience it's recommended to install the
@@ -29,6 +29,24 @@ And for an improved review experience it's recommended to install the
 
 ```
 cargo install cargo-insta
+```
+
+Note that this documentation prefers the YAML format which is why the `yaml`
+feature is proposed by default.  If you do not want to use it, you can omit it.
+
+## Optional: Faster Runs
+
+Insta benefits from being compiled in release mode, even as dev dependency.  It
+will compile slightly slower once, but use less memory, have faster diffs and
+just generally be more fun to use.  To achieve that, opt `insta` and `similar`
+(the diffing library) into higher optimization in your `Cargo.toml`:
+
+```yaml
+[profile.dev.package.insta]
+opt-level = 3
+
+[profile.dev.package.similar]
+opt-level = 3
 ```
 
 ## Writing Tests
@@ -49,7 +67,8 @@ ways:
 
 For most real world applications the recommendation is to use YAML snapshots
 of serializable values.  This is because they look best under version control
-and the diff viewer and support [redactions](../redactions/).
+and the diff viewer and support [redactions](../redactions/).  To use this
+enabled the `yaml` feature of insta.
 
 The following example demonstrates a very simple test case:
 
