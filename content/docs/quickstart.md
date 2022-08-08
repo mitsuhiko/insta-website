@@ -34,6 +34,21 @@ cargo install cargo-insta
 Note that this documentation prefers the YAML format which is why the `yaml`
 feature is proposed by default.  If you do not want to use it, you can omit it.
 
+## Optional: Faster Runs
+
+Insta benefits from being compiled in release mode, even as dev dependency.  It
+will compile slightly slower once, but use less memory, have faster diffs and
+just generally be more fun to use.  To achieve that, opt `insta` and `similar`
+(the diffing library) into higher optimization in your `Cargo.toml`:
+
+```yaml
+[profile.dev.package.insta]
+opt-level = 3
+
+[profile.dev.package.similar]
+opt-level = 3
+```
+
 ## Writing Tests
 
 Insta snapshots reference values which are fundamentally strings.  However the
