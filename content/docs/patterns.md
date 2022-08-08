@@ -18,11 +18,11 @@ to add a suffix to your snapshot tests specific to your input values:
 
 ```rust
 macro_rules! set_snapshot_suffix {
-    ($($expr:expr),*) => {{
+    ($($expr:expr),*) => {
         let mut settings = insta::Settings::clone_current();
         settings.set_snapshot_suffix(format!($($expr,)*));
-        settings.bind_to_thread();
-    }}
+        let _guard = settings.bind_to_scope();
+    }
 }
 ```
 
