@@ -37,6 +37,13 @@ glob!("inputs/*.txt", |path| {
 The path to the glob macro is relative to the location of the test
 file.  It uses the `globset` crate for actual glob operations.
 
+### Filtering globs
+
+If the `INSTA_GLOB_FILTER` environment variable is set, it is interpreted as
+another glob matcher which glob included paths must match to be executed. This
+is primarily useful for debugging, as it allows you to narrow your test execution
+to just the snapshot you're interested in without pulling it into a separate test.
+
 ## Custom Descriptions and Infos
 
 Sometimes the information shown in the insta review screen is insufficient for
