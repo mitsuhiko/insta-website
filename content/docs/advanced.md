@@ -44,6 +44,10 @@ another glob matcher which glob included paths must match to be executed. This
 is primarily useful for debugging, as it allows you to narrow your test execution
 to just the snapshot you're interested in without pulling it into a separate test.
 
+Multiple filters can be provided by separating them with a semicolon (`;`).
+Filters can also be passed to `cargo insta test` via the `--glob-filter` option
+which can be supplied multiple times.
+
 ## Custom Descriptions and Infos
 
 Sometimes the information shown in the insta review screen is insufficient for
