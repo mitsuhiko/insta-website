@@ -159,3 +159,73 @@ fn test_split_words() {
     "###);
 }
 ```
+
+## Annotating Snapshots
+
+Particularly when reviewing a lot of snapshots, it can be hard to tell if a snapshot is correct
+or not from the default information alone.  Out of the box, insta will include the expression that
+was asserted on with the snapshot, but that is often insufficient.  Take for instance a practical
+example from the MiniJinja template engine.  MiniJinja uses snapshots to assert the behavior of the
+template engine.  Out of the box this is what ``cargo insta`` would show:
+
+```
+Reviewing [1/1] minijinja@0.20.0:
+Snapshot file: minijinja/tests/snapshots/test_templates__vm@getattr.txt.snap
+Snapshot: vm@getattr
+Source: minijinja/tests/test_templates.rs:56
+Input file: minijinja/tests/inputs/getattr.txt
+──────────────────────────────────────────────────────────────────────────────────
+template.render(ctx)
+──────────────────────────────────────────────────────────────────────────────────
+-old snapshot
++new results
+────────────┬─────────────────────────────────────────────────────────────────────
+    0       │-name: Peter
+          0 │+name:
+    1     1 │ active: true
+────────────┴─────────────────────────────────────────────────────────────────────
+```
+
+It would be completely impossible for a reviewer to assess this snapshot without consulting the source code
+of the assertion.  However by using {{ api_link(item="with_settings", type="macro") }} it is possible to
+provide additional information in the form of a `description` (a text field) and `info` which is a
+structured value.  The former takes a string, the latter a serializable value.
+
+```rust
+insta::with_settings!({
+    info => &ctx, // the template context
+    description => source, // the template source code
+    omit_expression => true // do not include the default expression
+}, {
+    insta::assert_snapshot!(template.render(ctx));
+});
+```
+
+With this modification, the review dialog in `cargo insta` looks like this now:
+
+```
+Reviewing [1/1] minijinja@0.20.0:
+Snapshot file: minijinja/tests/snapshots/test_templates__vm@getattr.txt.snap
+Snapshot: vm@getattr
+Source: minijinja/tests/test_templates.rs:56
+Input file: minijinja/tests/inputs/getattr.txt
+──────────────────────────────────────────────────────────────────────────────────
+name: {{ user.name }}
+active: {{ user.is_active }}
+──────────────────────────────────────────────────────────────────────────────────
+user:
+  is_active: true
+  username: Peter
+──────────────────────────────────────────────────────────────────────────────────
+-old snapshot
++new results
+────────────┬─────────────────────────────────────────────────────────────────────
+    0       │-name: Peter
+          0 │+name:
+    1     1 │ active: true
+────────────┴─────────────────────────────────────────────────────────────────────
+```
+
+Now it's more obvious about why the snapshot is failing and what it should be.  In this
+case we can clearly see that there is a mismatch between `username` and `name` between
+context and template.
