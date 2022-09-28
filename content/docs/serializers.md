@@ -92,6 +92,16 @@ want to serialize the responses exactly as they happen from the API.  However
 JSON itself is not ideal for diffs which makes it slightly less nice to work
 with compared to YAML.
 
+There is also a second option that produces a compact (single line) snapshot if it fits there (up to 120 characters):
+
+```rust
+insta::assert_compact_json_snapshot!(&range);
+```
+
+```json
+[1, 2, 3, 4, 5]
+```
+
 ## TOML
 
 [TOML](https://github.com/toml-lang/toml) is a serialization format which is
