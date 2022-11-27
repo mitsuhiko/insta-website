@@ -18,7 +18,7 @@ is the regex, the second is the replacement string.  When set with `with_setting
 a vector of tuples is expected:
 
 ```rust
-insta::with_settings({filters => vec![
+insta::with_settings!({filters => vec![
     (r"\b[[:xdigit:]]{32}\b", "[UID]"),
 ]}, {
     insta::assert_snapshot!(...);
