@@ -229,3 +229,14 @@ user:
 Now it's more obvious about why the snapshot is failing and what it should be.  In this
 case we can clearly see that there is a mismatch between `username` and `name` between
 context and template.
+
+## Continuous Integration
+
+Insta behaves differently in CI environments.  For instance it will not
+write new snapshot files.  This behavior is enabled by the `CI` environment
+variable.  Please ensure that your CI system sets it.
+
+```
+export CI=true
+```
+
