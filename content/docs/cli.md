@@ -19,6 +19,12 @@ cargo install cargo-insta
 
 You can also update it this way.  After installation it becomes available as `cargo insta`.
 
+## Configuration
+
+`cargo-insta` will load the `insta.yaml` config file from the workspace which
+can be used to influence it's behavior.  For more information on this have a look
+[at the settings configuration](../settings/#tool-config-file).
+
 ## Commands
 
 Cargo Insta comes with a few different commands.
@@ -36,9 +42,11 @@ Cargo Insta comes with a few different commands.
 * `-e` / `--extensions`: lets you instruct cargo to consider other file extensions
   than `.snap`.  This is discouraged and should only be used in certain more
   advanced scenarios.
-* `--no-ignore`: by default cargo install will honor common ignore files such
+* `--include-ignored`: by default cargo insta will honor common ignore files such
   as `.gitignore` or `.ignore`.  When this flag is passed snapshots are also
-  discovered if they would otherwise be ignored.
+  discovered if they would otherwise be ignored. (Legacy alias `--no-ignore`)
+* `--include-hidden`: by default cargo will not walk hidden folders.  If this flag
+  is provided then it will also walk into those.
 * `-q` / `--quiet`: disables output on most commands.
 * `--help`: outputs help information.
 * `--snapshot`: when provided limits the operation to a single snapshot.  The
@@ -110,3 +118,7 @@ with `--`.
 * `--force-update-snapshots`: update all snapshots even if they are still matching.  This is useful if insta changed the metadata format.
 * `--delete-unreferenced-snapshots`: delete unreferenced snapshots after the test run.
   This is useful if tests were removed to clean up now unused snapshots.
+* `--glob-filter`: Filters to apply to the insta glob feature
+* `--test-runner`: Selects a different test runner (`cargo-test` or `nextest`)
+
+Some other options are directly mirrored from `cargo test`.
