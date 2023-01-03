@@ -131,10 +131,10 @@ reason for this is that insta does not control the execution of all tests
 so it cannot spot which files are actually unreferenced.
 
 There are two solutions for this problem.  One is to use `cargo-insta`'s
-`test` command which accepts a `--delete-unreferenced-snapshots` flag:
+`test` command which accepts a `--unreferenced=delete` flag:
 
 ```
-cargo insta test --delete-unreferenced-snapshots
+cargo insta test --unreferenced=delete
 ```
 
 The second option is to use the `INSTA_SNAPSHOT_REFERENCES_FILE` environment
@@ -147,6 +147,17 @@ export INSTA_SNAPSHOT_REFERENCES_FILE="$(mktemp)"
 cargo test
 rg --files -lg '*.snap' "$(pwd)" | grep -vFf "$INSTA_SNAPSHOT_REFERENCES_FILE" | xargs rm
 rm -f $INSTA_SNAPSHOT_REFERENCES_FILE
+```
+
+## Detecting Unused Snapshots
+
+Alternatively to deleting you can also set the `--unreferenced` flag to
+`reject` or `warn` which will either fail or at least warn if there are
+unused snapshots left.  When set to `auto` it behaves like `delete` locally
+or like `reject` in a CI environment.
+
+```
+cargo insta test --unreferenced=auto
 ```
 
 ## Workspace Root
