@@ -110,3 +110,6 @@ The following settings exist:
   as if `--include-ignored` is passed.
 * `review.include_hidden`: when set to `true`, `cargo-insta review` will behave
   as if `--include-hidden` is passed.
+* `review.warn_undiscovered`: when this is set to `false` the warning about undiscoverable
+  snapshots is not shown.  Especially for large repositories creating this warning can
+  take some time to execute.
