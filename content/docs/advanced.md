@@ -37,6 +37,19 @@ glob!("inputs/*.txt", |path| {
 The path to the glob macro is relative to the location of the test
 file.  It uses the `globset` crate for actual glob operations.
 
+A three-argument version of this macro allows specifying a base directory
+for the glob to start in. This allows globbing in arbitrary directories,
+including parent directories:
+
+```rust
+use std::fs;
+
+glob!("../test_data", "inputs/*.txt", |path| {
+    let input = fs::read_to_string(path).unwrap();
+    assert_snapshot!(input.to_uppercase());
+});
+```
+
 ### Filtering globs
 
 If the `INSTA_GLOB_FILTER` environment variable is set, it is interpreted as
