@@ -89,6 +89,23 @@ with_settings!({
 });
 ```
 
+## Duplicates
+
+By default insta will not allow snapshots to create duplicates.  There are
+however situations where multiple runs should result in the same snapshot.
+In that case you can use the {{ api_link(item="allow_duplicates", type="macro") }}
+macro to change this behavior.  Wrap your assertions in it, and every assertion
+will be compared against the one from the previous run:
+
+```rust
+insta::allow_duplicates! {
+    for x in (0..10).step_by(2) {
+        let is_even = x % 2 == 0;
+        insta::assert_debug_snapshot!(is_even, @"true");
+    }
+}
+```
+
 ## Test Output Control
 
 Insta by default will output quite a lot of information as tests run.  For
