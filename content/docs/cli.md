@@ -65,7 +65,8 @@ reference during a test run.
 It scans for all non ignored snapshots (optionally filtered down to individual
 snapshots with `--snapshot`) and then walks you through all of them.  For each
 snapshot change a diff is shown.  To accept a snapshot change press `a`, to
-reject `r` and to skip for now use `s`.
+reject `r` and to skip for now use `s`.  Diffs can be turned on and off with `d`
+and auxiliary information can be shown or hidden with `i`.
 
 <img src="../review.png" class="snap" alt="screenshot of cargo-insta review">
 

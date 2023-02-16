@@ -134,3 +134,25 @@ insta::assert_json_snapshot!(
     }
 );
 ```
+
+## Rounded Redactions
+
+For floating point values it can be useful to round them to certain number of decimal
+places.  For this you can use the {{ api_link(item="rounded_redaction", type="fn") }} function:
+
+```rust
+use serde::Serialize;
+
+#[derive(Debug, Serialize)]
+pub struct Point {
+    x: f64,
+    y: f64,
+}
+
+insta::assert_json_snapshot!(
+    &Point { x: 0.4223214, y: 0.424124 }
+    {
+        ".*" => insta::rounded_redaction(3)
+    }
+);
+```
