@@ -151,7 +151,7 @@ can pick them up.  Normally you don't have to change this variable.
 - `new`: write new snapshots into `.snap.new` files
 - `no`: does not update snapshot files at all (just runs tests)
 
-When `new` or `auto` is used as mode the `cargo-insta` command can be used
+With `new` or `auto`, the `cargo-insta` command can be used
 to review the snapshots conveniently.
 
 ## Deleting Unused Snapshots
