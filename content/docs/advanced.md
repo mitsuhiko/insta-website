@@ -5,14 +5,14 @@ weight = 8
 
 # Advanced Features
 
-Insta provides some advanced features for more complex test setups. Some of
+Insta provides some advanced features for more complex test setups.  Some of
 these require the activation of a cargo feature.
 
 ## Redactions
 
 Redactions allow you to redact parts of the snapshot so that they are stable
 even in the presence of non deterministic data such as timestamps or random
-IDs. See the [redactions documentation](../redactions/) for more information.
+IDs.  See the [redactions documentation](../redactions/) for more information.
 
 ## Globbing
 
@@ -35,7 +35,7 @@ glob!("inputs/*.txt", |path| {
 ```
 
 The path to the glob macro is relative to the location of the test
-file. It uses the `globset` crate for actual glob operations.
+file.  It uses the `globset` crate for actual glob operations.
 
 A three-argument version of this macro allows specifying a base directory
 for the glob to start in. This allows globbing in arbitrary directories,
@@ -64,8 +64,8 @@ which can be supplied multiple times.
 ## Custom Descriptions and Infos
 
 Sometimes the information shown in the insta review screen is insufficient for
-making decisions when reviewing. Insta provides two additional flags that are
-persisted in snapshot files: an `info` object and a `description` string. Both
+making decisions when reviewing.  Insta provides two additional flags that are
+persisted in snapshot files: an `info` object and a `description` string.  Both
 are show on the review screen.
 
 Example:
@@ -91,10 +91,10 @@ with_settings!({
 
 ## Duplicates
 
-By default insta will not allow snapshots to create duplicates. There are
+By default insta will not allow snapshots to create duplicates.  There are
 however situations where multiple runs should result in the same snapshot.
 In that case you can use the {{ api_link(item="allow_duplicates", type="macro") }}
-macro to change this behavior. Wrap your assertions in it, and every assertion
+macro to change this behavior.  Wrap your assertions in it, and every assertion
 will be compared against the one from the previous run:
 
 ```rust
@@ -108,18 +108,18 @@ insta::allow_duplicates! {
 
 ## Test Output Control
 
-Insta by default will output quite a lot of information as tests run. For
-instance it will print out all the diffs. This can be controlled by setting
-the `INSTA_OUTPUT` environment variable. The following values are possible:
+Insta by default will output quite a lot of information as tests run.  For
+instance it will print out all the diffs.  This can be controlled by setting
+the `INSTA_OUTPUT` environment variable.  The following values are possible:
 
-- `diff` (default): prints the diffs
-- `summary`: prints only summaries (name of snapshot files etc.)
-- `minimal`: like `summary` but more minimal
-- `none`: insta will not output any extra information
+* `diff` (default): prints the diffs
+* `summary`: prints only summaries (name of snapshot files etc.)
+* `minimal`: like `summary` but more minimal
+* `none`: insta will not output any extra information
 
 ## Disabling Assertion Failure
 
-By default the tests will fail when the snapshot assertion fails. However
+By default the tests will fail when the snapshot assertion fails.  However
 if a test produces more than one snapshot it can be useful to force a test
 to pass so that all new snapshots are created in one go.
 
@@ -139,9 +139,9 @@ cargo insta test --review
 ## Controlling Snapshot Updating
 
 During test runs snapshots will be updated according to the `INSTA_UPDATE`
-environment variable. The default is `auto` which will write all new
+environment variable.  The default is `auto` which will write all new
 snapshots into `.snap.new` files if no CI is detected so that `cargo-insta`
-can pick them up. Normally you don't have to change this variable.
+can pick them up.  Normally you don't have to change this variable.
 
 `INSTA_UPDATE` modes:
 
@@ -165,7 +165,7 @@ cargo insta test --unreferenced=delete
 
 Alternatively to deleting you can also set the `--unreferenced` flag to
 `reject` or `warn` which will either fail or at least warn if there are
-unused snapshots left. When set to `auto` it behaves like `delete` locally
+unused snapshots left.  When set to `auto` it behaves like `delete` locally
 or like `reject` in a CI environment.
 
 ```
