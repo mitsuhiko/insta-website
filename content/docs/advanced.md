@@ -154,32 +154,14 @@ can pick them up.  Normally you don't have to change this variable.
 When `new` or `auto` is used as mode the `cargo-insta` command can be used
 to review the snapshots conveniently.
 
-## Deleting Unused Snapshots
+## Handling Unused Snapshots
 
-Insta only has limited support for detecting unused snapshot files.  The
-reason for this is that insta does not control the execution of all tests
-so it cannot spot which files are actually unreferenced.
-
-There are two solutions for this problem.  One is to use `cargo-insta`'s
-`test` command which accepts a `--unreferenced=delete` flag:
+If we want to automatically check that there aren't unused snapshots in a
+project, we can use the `--unreferenced` option:
 
 ```
 cargo insta test --unreferenced=delete
 ```
-
-The second option is to use the `INSTA_SNAPSHOT_REFERENCES_FILE` environment
-variable to instruct insta to append all referenced files into a list.  This
-can then be used to delete all files not referenced.  For instance one could
-use [ripgrep](https://github.com/BurntSushi/ripgrep) like this:
-
-```bash
-export INSTA_SNAPSHOT_REFERENCES_FILE="$(mktemp)"
-cargo test
-rg --files -lg '*.snap' "$(pwd)" | grep -vFf "$INSTA_SNAPSHOT_REFERENCES_FILE" | xargs rm
-rm -f $INSTA_SNAPSHOT_REFERENCES_FILE
-```
-
-## Detecting Unused Snapshots
 
 Alternatively to deleting you can also set the `--unreferenced` flag to
 `reject` or `warn` which will either fail or at least warn if there are
@@ -189,6 +171,10 @@ or like `reject` in a CI environment.
 ```
 cargo insta test --unreferenced=auto
 ```
+
+Note that this option is only helpful when running the full set of tests, since
+insta does not control the execution of tests and can't assess whether unused
+tests depend on the unreferenced snapshots.
 
 ## Workspace Root
 
