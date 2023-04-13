@@ -92,7 +92,7 @@ The following settings exist:
 * `behavior.update`: this is the config option for the `INSTA_UPDATE`
   environment variable.  If the environment variable is not set, this one is
   used.  Valid values are `"auto"`, `"always"`, `"new"`, `"unseen"` and `"no"`.
-  The default is `"auto"`.
+  The default is `"auto"`. See [../advanced/#Controlling_Snapshot_Updating] for details.
 * `behavior.glob_fail_fast`: this is the config option for the `INSTA_GLOB_FAIL_FAST`
   environment variable.  If the environment variable is not set, this one is
   used.  Valid values are `true` and `false`, the default is `false`.
