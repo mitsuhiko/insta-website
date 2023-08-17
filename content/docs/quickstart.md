@@ -42,11 +42,9 @@ just generally be more fun to use.  To achieve that, opt `insta` and `similar`
 (the diffing library) into higher optimization in your `Cargo.toml`:
 
 ```yaml
-[profile.dev.package.insta]
-opt-level = 3
-
-[profile.dev.package.similar]
-opt-level = 3
+[profile.dev.package]
+insta.opt-level = 3
+similar.opt-level = 3
 ```
 
 ## Writing Tests
