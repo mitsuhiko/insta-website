@@ -18,17 +18,9 @@ The format of snapshot files [is documented here](../snapshot-files/).
 
 ## Implicitly Named Snapshots
 
-All snapshot assertion functions let you leave out the snapshot name in
-which case the snapshot name is derived from the test name (with an optional
-leading `test_` prefix removed.
-
-This works because the rust test runner names the thread by the test name
-and the name is taken from the thread name.  In case your test spawns additional
-threads this will not work and you will need to provide a name explicitly.
-There are some situations in which rust test does not name or use threads.
-In these cases insta will panic with an error.  The `backtrace` feature can
-be enabled in which case insta will attempt to recover the test name from
-the backtrace.
+All snapshot assertion functions let you leave out the snapshot name in which
+case the snapshot name is derived from the function name (with an optional
+leading `test_` prefix removed (as it is typically the test name).
 
 These are two assertions that use implicitly named snapshots:
 
