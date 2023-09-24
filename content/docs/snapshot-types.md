@@ -78,6 +78,22 @@ accept the change. The file will then be updated automatically and the
 reference value will be placed in the macro invocation. Note that inline
 snapshots require the use of `cargo-insta`.
 
+## Debug expressions
+
+Snapshots optionally accept a debug expression, which can be helpful for adding
+contextual information to the snapshot. Where this isn't provided, insta
+defaults to the stringified expression.
+
+```rust
+#[test]
+fn test_something() {
+    // Will use tha value of `description_of_1`
+    assert_snapshot!("snapshot", description_of_1, expr_1);
+    // No debug expr — will use the literal `"expr_1"` as the debug expr
+    assert_snapshot!("snapshot_no_debug", expr_1);
+}
+```
+
 ## Snapshot types list
 
 Here's a full list of formats that snapshots macros accept:
