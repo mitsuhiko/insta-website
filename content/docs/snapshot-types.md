@@ -5,13 +5,13 @@ weight = 4
 
 # Snapshot Types
 
-Insta has two major types of snapshots: named and inline snapshots.  The former
+Insta has two major types of snapshots: file and inline snapshots. The former
 are placed as separate `.snap` files, the latter are stored inline in string
 literals in the `.rs` files.
 
-Named snapshots are stored in the `snapshots` folder right next to the test file
-where this is used.  The name of the file is `<module>__<name>.snap` where
-the `name` of the snapshot.  Snapshots can either be explicitly named or the
+File snapshots are stored in the `snapshots` folder right next to the test file
+where this is used. The name of the file is `<module>__<name>.snap` where
+the `name` of the snapshot. Snapshots can either be explicitly named or the
 name is derived from the test name.
 
 The format of snapshot files [is documented here](../snapshot-files/).
@@ -20,7 +20,7 @@ The format of snapshot files [is documented here](../snapshot-files/).
 
 All snapshot assertion functions let you leave out the snapshot name in which
 case the snapshot name is derived from the function name (with an optional
-leading `test_` prefix removed (as it is typically the test name).
+leading `test_` prefix removed, as it is typically the test name).
 
 These are two assertions that use implicitly named snapshots:
 
@@ -56,10 +56,10 @@ This will create two snapshots: `first_snapshot` for the first value and
 
 ## Inline Snapshots
 
-Snapshots can also be stored inline.  In that case the format
+Snapshots can also be stored inline. In that case the format
 for the snapshot macros is `assert_snapshot!(reference_value, @"snapshot")`.
 The leading at sign (`@`) indicates that the following string is the
-reference value.  `cargo-insta` will then update that string with the new
+reference value. `cargo-insta` will then update that string with the new
 value on review:
 
 ```rust
@@ -74,6 +74,21 @@ assert_yaml_snapshot!(User {
 ```
 
 After the initial test failure you can run `cargo insta review` to
-accept the change.  The file will then be updated automatically and the
-reference value will be placed in the macro invocation.  Note that inline
+accept the change. The file will then be updated automatically and the
+reference value will be placed in the macro invocation. Note that inline
 snapshots require the use of `cargo-insta`.
+
+## Snapshot types list
+
+Here's a full list of formats that snapshots macros accept:
+
+| Snapshot type           | Example                                                          |
+| ----------------------- | ---------------------------------------------------------------- |
+| File, named             | `assert_snapshot!("name", expr)`                                 |
+| File, named, debug expr | `assert_snapshot!("name", expr, "description")`                  |
+| File, unnamed           | `assert_snapshot!(expr)`                                         |
+| Inline                  | `assert_snapshot!(expr, @"result")`                              |
+| Inline, debug expr      | `assert_snapshot!(expr, "description", @"result")`               |
+| Redacted, file, named   | `assert_snapshot!("name", expr, {"." => sorted_redaction()})`    |
+| Redacted, file, unnamed | `assert_snapshot!(expr, {"." => sorted_redaction()})`            |
+| Redacted, inline        | `assert_snapshot!(expr, {"." => sorted_redaction()}, @"result")` |
