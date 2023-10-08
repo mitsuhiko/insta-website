@@ -71,7 +71,7 @@ jobs:
         env:
           INSTA_UPDATE: new
       - name: Upload snapshots of failed tests
-          if: ${{ steps.run_tests.outcome == 'failure' }}
+          if: ${{ failure() && steps.run_tests.outcome == 'failure' }}
           uses: actions/upload-artifact@v3
           with:
             name: failed-snapshots
