@@ -44,3 +44,36 @@ In the above example the snapshots will then be named as follows:
 tests/snapshots/example__it@0-2.snap
 tests/snapshots/example__it@2-4.snap
 ```
+
+## Uploading Snapshots from GitHub Actions
+
+By default when running in a CI environment, insta won't generate new snapshot files.  When you
+use GitHub Actions however you can upload build artifacts after the test run to download the
+changed artifacts.  To accomplish this you need to force insta to write new snapshot files.
+
+The following configuration forces files to be created and creates an artifact of all new
+snapshot files.
+
+```yaml
+jobs:
+  test:
+    name: Snapshot Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: stable
+      - name: Test
+        id: run_tests
+        run: cargo test --all-features
+        env:
+          INSTA_UPDATE: new
+      - name: Upload snapshots of failed tests
+          if: ${{ steps.run_tests.outcome == 'failure' }}
+          uses: actions/upload-artifact@v3
+          with:
+            name: failed-snapshots
+            path: "**/snapshots/*.snap.new"
+```
