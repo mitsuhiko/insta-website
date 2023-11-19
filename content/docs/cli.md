@@ -22,7 +22,7 @@ You can also update it this way.  After installation it becomes available as `ca
 ## Configuration
 
 `cargo-insta` will load the `insta.yaml` config file from the workspace which
-can be used to influence it's behavior.  For more information on this have a look
+can be used to influence its behavior.  For more information on this have a look
 [at the settings configuration](../settings/#tool-config-file).
 
 ## Commands
