@@ -157,24 +157,11 @@ to review the snapshots conveniently.
 ## Handling Unused Snapshots
 
 If we want to automatically check that there aren't unused snapshots in a
-project, we can use the `--unreferenced` option:
+project, we can use the `--delete-unreferenced-snapshots` option:
 
 ```
-cargo insta test --unreferenced=delete
+cargo insta test --delete-unreferenced-snapshots
 ```
-
-Alternatively to deleting you can also set the `--unreferenced` flag to
-`reject` or `warn` which will either fail or at least warn if there are
-unused snapshots left.  When set to `auto` it behaves like `delete` locally
-or like `reject` in a CI environment.
-
-```
-cargo insta test --unreferenced=auto
-```
-
-Note that this option is only helpful when running the full set of tests, since
-insta does not control the execution of tests and can't assess whether unused
-tests depend on the unreferenced snapshots.
 
 ## Workspace Root
 
