@@ -117,7 +117,11 @@ with `--`.
 * `--accept-unseen`: like `--accept` but only accept all new (previously unseen) snapshots.
 * `--keep-pending`: do not reject pending snapshots before run.
 * `--force-update-snapshots`: update all snapshots even if they are still matching.  This is useful if insta changed the metadata format.
-* `--delete-unreferenced-snapshots`: deletes all unreferenced snapshots after a test run
+* `--unreferenced`: controls what should happen with unreferenced snapshots.  The default
+  is `ignore`. Valid values are `ignore`, `warn`, `reject`, `delete` and `auto`.
+  `warn` will emit a warning if there are unreference snapshots, `reject` will
+  error. `delete` will delete unreferenced snapshots after the test run.  Finally
+  `auto` behaves like `reject` in CI and like `delete` if not run from CI.
 * `--glob-filter`: Filters to apply to the insta glob feature
 * `--test-runner`: Selects a different test runner (`cargo-test` or `nextest`)
 
