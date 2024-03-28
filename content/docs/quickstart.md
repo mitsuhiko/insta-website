@@ -27,16 +27,19 @@ insta = { version = "{{ crate_version(crate="insta") }}", features = ["yaml"] }
 And for an improved review experience it's recommended to install the
 `cargo-insta` tool:
 
+Unix:
+
 ```
-# Unix
 curl -LsSf https://insta.rs/install.sh | sh
-
-# Windows
-powershell -c "irm https://insta.rs/install.ps1 | iex"
-
-# Manually
-cargo install cargo-insta
 ```
+
+Windows:
+
+```
+powershell -c "irm https://insta.rs/install.ps1 | iex"
+```
+
+For other options see [the CLI documentation](../cli/).
 
 Note that this documentation prefers the YAML format which is why the `yaml`
 feature is proposed by default.  If you do not want to use it, you can omit it.
