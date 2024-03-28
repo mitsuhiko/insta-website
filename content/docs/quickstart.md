@@ -28,6 +28,13 @@ And for an improved review experience it's recommended to install the
 `cargo-insta` tool:
 
 ```
+# Unix
+curl -LsSf https://insta.rs/install.sh | sh
+
+# Windows
+powershell -c "irm https://insta.rs/install.ps1 | iex"
+
+# Manually
 cargo install cargo-insta
 ```
 
