@@ -11,11 +11,15 @@ working with inline snapshots.
 
 ## Installation
 
-Cargo Insta can be installed with `curl` to bash or powershell if you haven't yet:
+Cargo Insta can be installed with `curl` to bash or powershell if you haven't yet.
+
+On Unix (Linux and macOS):
 
 ```
 curl -LsSf https://insta.rs/install.sh | sh
 ```
+
+On Windows:
 
 ```
 powershell -c "irm https://insta.rs/install.ps1 | iex"
