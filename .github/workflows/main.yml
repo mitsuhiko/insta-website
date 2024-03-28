@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@main
+      - name: 'Fetch Installers'
+        run: make fetch-installers
       - name: 'Build only' 
         uses: shalzz/zola-deploy-action@71190a69bbadd5fea222346d79b960e687e898ed
         env:
@@ -23,6 +25,8 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@main
+      - name: 'Fetch Installers'
+        run: make fetch-installers
       - name: 'Build and deploy'
         uses: shalzz/zola-deploy-action@71190a69bbadd5fea222346d79b960e687e898ed
         env:
