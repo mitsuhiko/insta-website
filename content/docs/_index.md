@@ -18,6 +18,7 @@ all of which you can find documented here.
 * [Redactions](./redactions/) to learn about the snapshot redactions feature.
 * [Filters](./filters/) to learn about the snapshot string filtering feature.
 * [Advanced Features](./advanced/) to learn about more advanced features such as globbing.
+* [Testing CLIs](./cmd/) to learn how to use `insta-cmd` to test CLIs.
 * [Settings](./settings/) for how you can customize insta's behavior.
 * [Patterns](./patterns/) common patterns for using insta.
 * [Cargo Insta](./cli/) for how to use the companion tool.

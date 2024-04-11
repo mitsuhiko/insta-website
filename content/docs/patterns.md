@@ -1,6 +1,6 @@
 +++
 title = "Patterns"
-weight = 10
+weight = 30
 +++
 
 # Patterns
