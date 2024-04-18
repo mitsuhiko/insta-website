@@ -3,7 +3,7 @@ title = "Snapshot Types"
 weight = 4
 +++
 
-# Snapshot Types
+# Snapshot types
 
 Insta has two major types of snapshots: file and inline snapshots. The former
 are placed as separate `.snap` files, the latter are stored inline in string
@@ -16,7 +16,9 @@ name is derived from the test name.
 
 The format of snapshot files [is documented here](../snapshot-files/).
 
-## Implicitly Named Snapshots
+## File snapshots
+
+### Unnamed snapshots
 
 All snapshot assertion functions let you leave out the snapshot name in which
 case the snapshot name is derived from the function name (with an optional
@@ -34,7 +36,7 @@ fn test_something() {
 
 This creates two snapshots named `something` and `something-2`.
 
-## Named snapshots
+### Named snapshots
 
 Explicit snapshot naming can be useful to be more explicit when multiple
 snapshots are tested within one function as the default behavior would be to
@@ -54,7 +56,7 @@ fn test_something() {
 This will create two snapshots: `first_snapshot` for the first value and
 `second_snapshot` for the second value.
 
-## Inline Snapshots
+## Inline snapshots
 
 Snapshots can also be stored inline. In that case the format
 for the snapshot macros is `assert_snapshot!(reference_value, @"snapshot")`.
@@ -98,13 +100,13 @@ fn test_something() {
 
 Here's a full list of formats that snapshots macros accept:
 
-| Snapshot type           | Example                                                          |
-| ----------------------- | ---------------------------------------------------------------- |
-| File, named             | `assert_snapshot!("name", expr)`                                 |
-| File, named, debug expr | `assert_snapshot!("name", expr, "description")`                  |
-| File, unnamed           | `assert_snapshot!(expr)`                                         |
-| Inline                  | `assert_snapshot!(expr, @"result")`                              |
-| Inline, debug expr      | `assert_snapshot!(expr, "description", @"result")`               |
-| Redacted, file, named   | `assert_snapshot!("name", expr, {"." => sorted_redaction()})`    |
-| Redacted, file, unnamed | `assert_snapshot!(expr, {"." => sorted_redaction()})`            |
-| Redacted, inline        | `assert_snapshot!(expr, {"." => sorted_redaction()}, @"result")` |
+| Snapshot type                     | Example                                                                   |
+| --------------------------------- | ------------------------------------------------------------------------- |
+| File, named                       | `assert_snapshot!("name", expr)`                                          |
+| File, named, debug expr           | `assert_snapshot!("name", expr, "description")`                           |
+| File, unnamed                     | `assert_snapshot!(expr)`                                                  |
+| File, redacted, named             | `assert_yaml_snapshot!("name", expr, {"." => sorted_redaction()})`        |
+| File, redacted, named, debug expr | `assert_yaml_snapshot!(expr, {"." => sorted_redaction()}, "description")` |
+| File, redacted, unnamed           | `assert_yaml_snapshot!(expr, {"." => sorted_redaction()})`                |
+| Inline                            | `assert_snapshot!(expr, @"result")`                                       |
+| Inline, redacted                  | `assert_snapshot!(expr, {"." => sorted_redaction()}, @"result")`          |
