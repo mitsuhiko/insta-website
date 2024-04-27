@@ -94,7 +94,7 @@ And then you can use it as such:
 ```rust
 #[test]
 fn test_basic() {
-    apply_common_filters();
+    apply_common_filters!();
     assert_cmd_snapshot!(cli().arg("create-temp-file").arg("--template=./foo"), @###"
     success: true
     exit_code: 0
