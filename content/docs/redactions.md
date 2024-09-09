@@ -150,7 +150,7 @@ pub struct Point {
 }
 
 insta::assert_json_snapshot!(
-    &Point { x: 0.4223214, y: 0.424124 }
+    &Point { x: 0.4223214, y: 0.424124 },
     {
         ".*" => insta::rounded_redaction(3)
     }
