@@ -26,6 +26,10 @@ ul > li > p {
   margin: 0;
 }
 
+ul > li > p + p {
+  margin-top: 0.5rem;
+}
+
 p > img {
   width: 100%;
   height: auto;
