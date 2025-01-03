@@ -10,7 +10,9 @@ are placed as separate `.snap` files, the latter are stored inline in string
 literals in the `.rs` files.
 
 File snapshots are stored in the `snapshots` folder right next to the test file
-where this is used. The name of the file is `<module>__<name>.snap` where
+where this is used (or in a user defined location by
+[changing settings](https://docs.rs/insta/latest/insta/struct.Settings.html#method.snapshot_path)). 
+The name of the file is `<module>__<name>.snap` where
 the `name` of the snapshot. Snapshots can either be explicitly named or the
 name is derived from the test name.
 
