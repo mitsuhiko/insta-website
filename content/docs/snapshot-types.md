@@ -82,6 +82,23 @@ accept the change. The file will then be updated automatically and the
 reference value will be placed in the macro invocation. Note that inline
 snapshots require the use of `cargo-insta`.
 
+## Binary snapshots (experimental)
+
+Binary snapshots store their content in a separate file next to the metadata
+file. This enables opening them in external tools. They are simply compared byte
+for byte. 
+
+```rust
+#[test]
+fn test_something() {
+    // implicit name:
+    insta::assert_binary_snapshot!(".txt", b"abcd".to_vec());
+
+    // named:
+    insta::assert_binary_snapshot!("my_snapshot.bin", [0, 1, 2, 3].to_vec());
+}
+```
+
 ## Debug expressions
 
 Snapshots optionally accept a debug expression, which can be helpful for adding
