@@ -24,8 +24,8 @@ dependency:
 insta = { version = "{{ crate_version(crate="insta") }}", features = ["yaml"] }
 ```
 
-And for an improved review experience it's recommended to install the
-`cargo-insta` tool:
+And for an improved review experience it's recommended (but not necessary)
+to install the `cargo-insta` tool:
 
 Unix:
 
@@ -76,7 +76,7 @@ ways:
 For most real world applications the recommendation is to use YAML snapshots
 of serializable values.  This is because they look best under version control
 and the diff viewer and support [redactions](../redactions/).  To use this
-enabled the `yaml` feature of insta.
+enable the `yaml` feature of insta.
 
 The following example demonstrates a very simple test case:
 
@@ -122,6 +122,28 @@ cargo insta test --review
 ```
 
 For more information see [cargo-insta](../cli/) documentation.
+
+## Tests without Insta
+
+Note that `cargo-insta` is entirely optional.  You can also just use insta
+directly from `cargo test` and control it via the `INSTA_UPDATE` environment
+variable.  The default is `auto` which will write all new snapshots into
+`.snap.new` files if no CI is detected so that `cargo-insta` can pick them
+up.  The following other modes are possible:
+
+- `auto`: the default. `no` for CI environments or `new` otherwise
+- `always`: overwrites old snapshot files with new ones unasked
+- `unseen`: behaves like `always` for new snapshots and `new` for others
+- `new`: write new snapshots into `.snap.new` files
+- `no`: does not update snapshot files at all (just runs tests)
+
+You can for instance first run the tests and not write any new snapshots, and
+if you like them run the tests again and update them:
+
+```
+INSTA_UPDATE=no cargo test
+INSTA_UPDATE=always cargo test
+```
 
 ## Inline Snapshots
 

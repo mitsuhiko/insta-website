@@ -28,7 +28,7 @@ fn cli() -> Command {
 
 #[test]
 fn test_version() {
-    assert_cmd_snapshot!(cli().arg("--version"), @###"
+    assert_cmd_snapshot!(cli().arg("--version"), @r###"
     success: true
     exit_code: 0
     ----- stdout -----
@@ -54,7 +54,7 @@ fn cli() -> Command {
 
 #[test]
 fn test_echo_back() {
-    assert_cmd_snapshot!(cli().arg("echo-back").pass_stdin("Hello World!"), @###"
+    assert_cmd_snapshot!(cli().arg("echo-back").pass_stdin("Hello World!"), @r###"
     success: true
     exit_code: 0
     ----- stdout -----
@@ -95,7 +95,7 @@ And then you can use it as such:
 #[test]
 fn test_basic() {
     apply_common_filters!();
-    assert_cmd_snapshot!(cli().arg("create-temp-file").arg("--template=./foo"), @###"
+    assert_cmd_snapshot!(cli().arg("create-temp-file").arg("--template=./foo"), @r###"
     success: true
     exit_code: 0
     ----- stdout -----
