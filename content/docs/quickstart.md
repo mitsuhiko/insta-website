@@ -76,7 +76,7 @@ ways:
 For most real world applications the recommendation is to use YAML snapshots
 of serializable values.  This is because they look best under version control
 and the diff viewer and support [redactions](../redactions/).  To use this
-enabled the `yaml` feature of insta.
+enable the `yaml` feature of insta.
 
 The following example demonstrates a very simple test case:
 
