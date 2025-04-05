@@ -11,7 +11,7 @@ literals in the `.rs` files.
 
 File snapshots are stored in the `snapshots` folder right next to the test file
 where this is used (or in a user defined location by
-[changing settings](https://docs.rs/insta/latest/insta/struct.Settings.html#method.snapshot_path)). 
+[changing settings](https://docs.rs/insta/latest/insta/struct.Settings.html#method.snapshot_path)).
 The name of the file is `<module>__<name>.snap` where
 the `name` of the snapshot. Snapshots can either be explicitly named or the
 name is derived from the test name.
@@ -86,7 +86,7 @@ snapshots require the use of `cargo-insta`.
 
 Binary snapshots store their content in a separate file next to the metadata
 file. This enables opening them in external tools. They are simply compared byte
-for byte. 
+for byte.
 
 ```rust
 #[test]
@@ -108,9 +108,9 @@ defaults to the stringified expression.
 ```rust
 #[test]
 fn test_something() {
-    // Will use tha value of `description_of_1`
-    assert_snapshot!("snapshot", description_of_1, expr_1);
-    // No debug expr — will use the literal `"expr_1"` as the debug expr
+    // debug expr is "helpful info"
+    assert_snapshot!("snapshot", expr_1, "helpful info");
+    // No debug expr is passed so — `"expr_1"` is the debug expr
     assert_snapshot!("snapshot_no_debug", expr_1);
 }
 ```
@@ -119,13 +119,13 @@ fn test_something() {
 
 Here's a full list of formats that snapshots macros accept:
 
-| Snapshot type                     | Example                                                                   |
-| --------------------------------- | ------------------------------------------------------------------------- |
-| File, named                       | `assert_snapshot!("name", expr)`                                          |
-| File, named, debug expr           | `assert_snapshot!("name", expr, "description")`                           |
-| File, unnamed                     | `assert_snapshot!(expr)`                                                  |
-| File, redacted, named             | `assert_yaml_snapshot!("name", expr, {"." => sorted_redaction()})`        |
-| File, redacted, named, debug expr | `assert_yaml_snapshot!(expr, {"." => sorted_redaction()}, "description")` |
-| File, redacted, unnamed           | `assert_yaml_snapshot!(expr, {"." => sorted_redaction()})`                |
-| Inline                            | `assert_snapshot!(expr, @"result")`                                       |
-| Inline, redacted                  | `assert_snapshot!(expr, {"." => sorted_redaction()}, @"result")`          |
+| Snapshot type                     | Example                                                                          |
+| --------------------------------- | -------------------------------------------------------------------------------- |
+| File, named                       | `assert_snapshot!("name", expr)`                                                 |
+| File, named, debug expr           | `assert_snapshot!("name", expr, "debug_expr")`                                   |
+| File, unnamed                     | `assert_snapshot!(expr)`                                                         |
+| File, redacted, named             | `assert_yaml_snapshot!("name", expr, {"." => sorted_redaction()})`               |
+| File, redacted, named, debug expr | `assert_yaml_snapshot!("name", expr, {"." => sorted_redaction()}, "debug_expr")` |
+| File, redacted, unnamed           | `assert_yaml_snapshot!(expr, {"." => sorted_redaction()})`                       |
+| Inline                            | `assert_snapshot!(expr, @"result")`                                              |
+| Inline, redacted                  | `assert_snapshot!(expr, {"." => sorted_redaction()}, @"result")`                 |
