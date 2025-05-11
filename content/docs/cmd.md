@@ -77,7 +77,7 @@ macro_rules! apply_common_filters {
     {} => {
         let mut settings = insta::Settings::clone_current();
         // Macos Temp Folder
-        settings.add_filter(r"/var/folders/\S+?/T/\S+", "[TEMP_FILE]"),
+        settings.add_filter(r"/var/folders/\S+?/T/\S+", "[TEMP_FILE]");
         // Linux Temp Folder
         settings.add_filter(r"/tmp/\.tmp\S+", "[TEMP_FILE]");
         // Windows Temp folder
