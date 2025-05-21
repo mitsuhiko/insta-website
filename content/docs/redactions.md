@@ -13,7 +13,7 @@ values to make snapshots stable when otherwise random or otherwise changing
 values are involved.  Redactions are an optional feature and can be enabled
 with the `redactions` feature.
 
-For "readacting" strings you can use the [filters feature](../filters/) instead.
+For "redacting" strings you can use the [filters feature](../filters/) instead.
 
 Redactions can be defined as the third argument to those assertion macros by
 using the following syntax:
