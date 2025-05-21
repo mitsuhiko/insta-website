@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Similar | Insta Snapshots</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    >
+    <style>
+  :root {
+    /* Primary theme color */
+    --primary-color: #86bbd8;
+    /* Primary theme text color */
+    --primary-text-color: #2f4858;
+    /* Primary theme link color */
+    --primary-link-color: #336699;
+    /* Secondary color: the background body color */
+    --secondary-color: #d0e3ee;
+    --secondary-text-color: #303030;
+    /* Light background */
+    --light-color: #edf6fb;
+    /* Highlight text color of table of content */
+    --toc-highlight-text-color: #336699;
+    --toc-highlight-background-color: var(--light-color);
+  }
+</style>
+
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+      rel="stylesheet"> 
+    <link
+      href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,600&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="https://insta.rs/juice.css">
+    
+      
+      
+    
+    <meta property="title" content="Similar">
+    <meta property="og:title" content="Similar">
+    <meta property="og:site_name" content="Insta Snapshots">
+    <meta property="og:image" content="https://insta.rs/logo.png" />
+    <meta name="twitter:site" content="@mitsuhiko">
+    <meta name="twitter:title" content="Similar" />
+    <meta name="description" content="Similar: A Diffing Library
+
+
+
+
+Similar is a dependency free crate for Rust that implements different…">
+    <meta name="og:description" content="Similar: A Diffing Library
+
+
+
+
+Similar is a dependency free crate for Rust that implements different…">
+    <meta name="twitter:description" content="Similar: A Diffing Library
+
+
+
+
+Similar is a dependency free crate for Rust that implements different…">
+    <meta name="twitter:card" content="summary">
+    
+  </head>
+
+  <body>
+    
+<header>
+   
+<a href="https:&#x2F;&#x2F;insta.rs&#x2F;">
+  <div class="logo">
+    <img src="https://insta.rs/icon.png" alt="logo" />
+    Insta
+  </div>
+</a>
+
+<nav>
+  
+  <a class="nav-item subtitle-text" href="&#x2F;docs&#x2F;">Docs</a>
+  
+  <a class="nav-item subtitle-text" href="&#x2F;changelog&#x2F;">Changelog</a>
+  
+  <a class="nav-item subtitle-text" href="&#x2F;similar&#x2F;">Similar</a>
+  
+  <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;mitsuhiko&#x2F;insta">GitHub</a>
+  
+  <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;insta">Crate</a>
+  
+</nav>
+
+</header>
+
+
+    <main>
+      
+        
+          
+        
+        
+          
+        
+        
+          
+        
+        <label for="toc-toggle" class="toggle-toc"><span>Toggle Navigation</span></label>
+        <input type="checkbox" id="toc-toggle">
+        <div class="toc">
+          <div class="toc-sticky">
+            
+            
+            
+              
+              
+                <div class="toc-item">
+                  <a class="current" href="https:&#x2F;&#x2F;insta.rs&#x2F;similar&#x2F;#similar-a-diffing-library">Similar: A Diffing Library</a>
+                </div>
+                
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;similar&#x2F;#screenshot">Screenshot</a>
+                  </div>
+                  
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;similar&#x2F;#what-s-in-the-box">What&#x27;s in the box?</a>
+                  </div>
+                  
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;similar&#x2F;#related-projects">Related Projects</a>
+                  </div>
+                  
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;similar&#x2F;#license-and-links">License and Links</a>
+                  </div>
+                  
+                  
+                
+              
+            
+          </div>
+        </div>
+      
+
+      <div class="content text">
+        
+<h1 id="similar-a-diffing-library">Similar: A Diffing Library</h1>
+<p><a href="https://crates.io/crates/similar"><img src="https://img.shields.io/crates/d/similar.svg" alt="Crates.io" /></a>
+<a href="https://github.com/mitsuhiko/similar/blob/main/LICENSE"><img src="https://img.shields.io/github/license/mitsuhiko/similar" alt="License" /></a>
+<a href="https://img.shields.io/badge/rust-1.60%2B-orange.svg"><img src="https://img.shields.io/badge/rust-1.60%2B-orange.svg" alt="rustc 1.60.0" /></a>
+<a href="https://docs.rs/similar"><img src="https://docs.rs/similar/badge.svg" alt="Documentation" /></a></p>
+<p>Similar is a dependency free crate for Rust that implements different diffing
+algorithms and high level interfaces for it. It is based on the
+<a href="https://pijul.org/">pijul</a> implementation of the Patience algorithm and
+inherits some ideas from there. It also incorporates the Myers' diff
+algorithm which was largely written by Brandon Williams.  This library was
+built for the <a href="https://insta.rs">insta snapshot testing library</a>.</p>
+<pre data-lang="rust" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#72ab00;">use </span><span>similar::{ChangeTag, TextDiff};
+</span><span>
+</span><span style="color:#668f14;">fn </span><span style="color:#c23f31;">main</span><span>() {
+</span><span>    </span><span style="color:#668f14;">let</span><span> diff </span><span style="color:#72ab00;">= </span><span>TextDiff::from_lines(
+</span><span>        </span><span style="color:#d07711;">&quot;Hello World</span><span style="color:#aeb52b;">\n</span><span style="color:#d07711;">This is the second line.</span><span style="color:#aeb52b;">\n</span><span style="color:#d07711;">This is the third.&quot;</span><span>,
+</span><span>        </span><span style="color:#d07711;">&quot;Hallo Welt</span><span style="color:#aeb52b;">\n</span><span style="color:#d07711;">This is the second line.</span><span style="color:#aeb52b;">\n</span><span style="color:#d07711;">This is life.</span><span style="color:#aeb52b;">\n</span><span style="color:#d07711;">Moar and more&quot;</span><span>,
+</span><span>    );
+</span><span>
+</span><span>    </span><span style="color:#72ab00;">for</span><span> change </span><span style="color:#72ab00;">in</span><span> diff.</span><span style="color:#b39f04;">iter_all_changes</span><span>() {
+</span><span>        </span><span style="color:#668f14;">let</span><span> sign </span><span style="color:#72ab00;">= match</span><span> change.</span><span style="color:#b39f04;">tag</span><span>() {
+</span><span>            ChangeTag::Delete </span><span style="color:#72ab00;">=&gt; </span><span style="color:#d07711;">&quot;-&quot;</span><span>,
+</span><span>            ChangeTag::Insert </span><span style="color:#72ab00;">=&gt; </span><span style="color:#d07711;">&quot;+&quot;</span><span>,
+</span><span>            ChangeTag::Equal </span><span style="color:#72ab00;">=&gt; </span><span style="color:#d07711;">&quot; &quot;</span><span>,
+</span><span>        };
+</span><span>        </span><span style="color:#a2a001;">print!</span><span>(</span><span style="color:#d07711;">&quot;</span><span style="color:#aeb52b;">{}{}</span><span style="color:#d07711;">&quot;</span><span>, sign, change);
+</span><span>    }
+</span><span>}
+</span></code></pre>
+<h2 id="screenshot">Screenshot</h2>
+<p><img src="https://raw.githubusercontent.com/mitsuhiko/similar/main/assets/terminal-inline.png" alt="terminal highlighting" /></p>
+<h2 id="what-s-in-the-box">What's in the box?</h2>
+<ul>
+<li>Myers' diff</li>
+<li>Patience diff</li>
+<li>Hunt–McIlroy / Hunt–Szymanski LCS diff</li>
+<li>Diffing on arbitrary comparable sequences</li>
+<li>Line, word, character and grapheme level diffing</li>
+<li>Text and Byte diffing</li>
+<li>Unified diff generation</li>
+</ul>
+<h2 id="related-projects">Related Projects</h2>
+<ul>
+<li><a href="https://insta.rs">insta</a> snapshot testing library</li>
+<li><a href="https://github.com/mitsuhiko/similar-asserts">similar-asserts</a> assertion library</li>
+</ul>
+<h2 id="license-and-links">License and Links</h2>
+<ul>
+<li><a href="https://docs.rs/similar/">Documentation</a></li>
+<li><a href="https://github.com/mitsuhiko/similar/issues">Issue Tracker</a></li>
+<li><a href="https://github.com/mitsuhiko/similar/tree/main/examples">Examples</a></li>
+<li>License: <a href="https://github.com/mitsuhiko/similar/blob/main/LICENSE">Apache-2.0</a></li>
+</ul>
+
+
+
+
+
+        
+          
+        
+
+        
+          <div class="source-hint">
+            Found an issue?
+            You can
+            <a href="https://github.com/mitsuhiko&#x2F;insta-website/edit/main/content/similar.md">edit this page</a>
+            on GitHub.
+          </div>
+        
+      </div>
+    </main>
+
+    
+<footer>
+  <span>
+    Created by <a href="https://lucumr.pocoo.org/">Armin Ronacher</a>
+  </span>
+  <span><a href="https://github.com/mitsuhiko/insta">Github</a></span>
+  <span><a href="https://github.com/mitsuhiko/insta/issues">Issues</a></span>
+  <span><a href="https://docs.rs/insta">API Documentation</a></span>
+  <span><a href="/similar/">Similar</a></span>
+  <span><a href="https://crates.io/crates/io">Crate</a></span>
+</footer>
+
+    <script>
+      function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+          item.classList.remove("active");
+        });
+        document
+          .querySelector(".toc a[href$='" + pathname + "#" + heading + "']")
+          .classList.add("active");
+      }
+
+      let currentHeading = "";
+      window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach((item) => {
+          if (item.id !== "") {
+            elementArr[item.id] = item.getBoundingClientRect().top;
+          }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+          if (!elementArr.hasOwnProperty(key)) {
+            continue;
+          }
+          if (elementArr[key] > 0 && elementArr[key] < 300) {
+            if (currentHeading !== key) {
+              highlightNav(key);
+              currentHeading = key;
+            }
+            break;
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
