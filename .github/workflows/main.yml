@@ -5,6 +5,12 @@ on:
       - main
   pull_request:
   workflow_dispatch:
+  # Rebuild periodically so /changelog/ picks up CHANGELOG.md from mitsuhiko/insta
+  # (fetched at build time via the fetch_github shortcode).
+  schedule:
+    - cron: "0 6 * * *"
+  repository_dispatch:
+    types: [sync-changelog]
 jobs:
   build:
     runs-on: ubuntu-latest
