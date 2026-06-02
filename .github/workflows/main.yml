@@ -31,7 +31,29 @@ jobs:
         uses: actions/checkout@main
       - name: 'Fetch Installers'
         run: make fetch-installers
-      - name: 'Build and deploy'
+      - name: 'Build'
+        uses: shalzz/zola-deploy-action@71190a69bbadd5fea222346d79b960e687e898ed
+        env:
+          BUILD_DIR: .
+          BUILD_ONLY: true
+      # The deploy action force-pushes gh-pages on every run, so a scheduled
+      # rebuild commits even when nothing changed. Skip the deploy when the
+      # freshly built site is identical to what's already published.
+      - name: 'Check for changes'
+        id: diff
+        run: |
+          rm -rf ../published && mkdir -p ../published
+          if git fetch --depth=1 origin gh-pages 2>/dev/null; then
+            git archive FETCH_HEAD | tar -x -C ../published
+          fi
+          if diff -rq ../published public >/dev/null 2>&1; then
+            echo "Built site matches the published one; skipping deploy."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: 'Deploy'
+        if: steps.diff.outputs.changed == 'true'
         uses: shalzz/zola-deploy-action@71190a69bbadd5fea222346d79b960e687e898ed
         env:
           PAGES_BRANCH: gh-pages
