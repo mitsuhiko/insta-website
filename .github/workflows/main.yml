@@ -5,6 +5,10 @@ on:
       - main
   pull_request:
   workflow_dispatch:
+  # Rebuild daily so the changelog page picks up new CHANGELOG.md entries from
+  # the insta repo, which are fetched at build time rather than committed here.
+  schedule:
+    - cron: '17 4 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
