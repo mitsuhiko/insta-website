@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Snapshot Types | Insta Snapshots</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    >
+    <style>
+  :root {
+    /* Primary theme color */
+    --primary-color: #86bbd8;
+    /* Primary theme text color */
+    --primary-text-color: #2f4858;
+    /* Primary theme link color */
+    --primary-link-color: #336699;
+    /* Secondary color: the background body color */
+    --secondary-color: #d0e3ee;
+    --secondary-text-color: #303030;
+    /* Light background */
+    --light-color: #edf6fb;
+    /* Highlight text color of table of content */
+    --toc-highlight-text-color: #336699;
+    --toc-highlight-background-color: var(--light-color);
+  }
+</style>
+
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+      rel="stylesheet"> 
+    <link
+      href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,600&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="https://insta.rs/juice.css">
+    
+      
+      
+    
+    <meta property="title" content="Snapshot Types">
+    <meta property="og:title" content="Snapshot Types">
+    <meta property="og:site_name" content="Insta Snapshots">
+    <meta property="og:image" content="https://insta.rs/logo.png" />
+    <meta name="twitter:site" content="@mitsuhiko">
+    <meta name="twitter:title" content="Snapshot Types" />
+    <meta name="description" content="Snapshot types
+Insta has two major types of snapshots: file and inline snapshots. The former
+are pla…">
+    <meta name="og:description" content="Snapshot types
+Insta has two major types of snapshots: file and inline snapshots. The former
+are pla…">
+    <meta name="twitter:description" content="Snapshot types
+Insta has two major types of snapshots: file and inline snapshots. The former
+are pla…">
+    <meta name="twitter:card" content="summary">
+    
+  </head>
+
+  <body>
+    
+<header>
+   
+<a href="https:&#x2F;&#x2F;insta.rs&#x2F;">
+  <div class="logo">
+    <img src="https://insta.rs/icon.png" alt="logo" />
+    Insta
+  </div>
+</a>
+
+<nav>
+  
+  <a class="nav-item subtitle-text" href="&#x2F;docs&#x2F;">Docs</a>
+  
+  <a class="nav-item subtitle-text" href="&#x2F;changelog&#x2F;">Changelog</a>
+  
+  <a class="nav-item subtitle-text" href="&#x2F;similar&#x2F;">Similar</a>
+  
+  <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;mitsuhiko&#x2F;insta">GitHub</a>
+  
+  <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;insta">Crate</a>
+  
+</nav>
+
+</header>
+
+
+    <main>
+      
+        
+          
+        
+        
+          
+        
+        
+          
+        
+        <label for="toc-toggle" class="toggle-toc"><span>Toggle Navigation</span></label>
+        <input type="checkbox" id="toc-toggle">
+        <div class="toc">
+          <div class="toc-sticky">
+            
+            
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;">Overview</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;quickstart&#x2F;">Getting Started</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext current" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;snapshot-types&#x2F;">Snapshot Types</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;serializers&#x2F;">Serializers</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;snapshot-files&#x2F;">Snapshot Files</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;redactions&#x2F;">Redactions</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;filters&#x2F;">Filters</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;advanced&#x2F;">Advanced Features</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;cmd&#x2F;">Testing CLIs</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;settings&#x2F;">Settings</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;patterns&#x2F;">Patterns</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;cli&#x2F;">Cargo Insta</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;vscode&#x2F;">VS Code Extension</a>
+              </div>
+              
+              
+                
+                <div class="toc-item">
+                  <a class="subtext external" href="https:&#x2F;&#x2F;docs.rs&#x2F;insta">API Docs</a>
+                </div>
+                
+              
+              
+            
+            
+              
+              <hr>
+              
+              
+                <div class="toc-item">
+                  <a class="current" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;snapshot-types&#x2F;#snapshot-types">Snapshot types</a>
+                </div>
+                
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;snapshot-types&#x2F;#file-snapshots">File snapshots</a>
+                  </div>
+                  
+                    
+                    <div class="toc-item-child">
+                      <a class="small-subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;snapshot-types&#x2F;#unnamed-snapshots">Unnamed snapshots</a>
+                    </div>
+                    
+                    <div class="toc-item-child">
+                      <a class="small-subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;snapshot-types&#x2F;#named-snapshots">Named snapshots</a>
+                    </div>
+                    
+                  
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;snapshot-types&#x2F;#inline-snapshots">Inline snapshots</a>
+                  </div>
+                  
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;snapshot-types&#x2F;#binary-snapshots-experimental">Binary snapshots (experimental)</a>
+                  </div>
+                  
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;snapshot-types&#x2F;#debug-expressions">Debug expressions</a>
+                  </div>
+                  
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;snapshot-types&#x2F;#snapshot-types-list">Snapshot types list</a>
+                  </div>
+                  
+                  
+                
+              
+            
+          </div>
+        </div>
+      
+
+      <div class="content text">
+        
+<h1 id="snapshot-types">Snapshot types</h1>
+<p>Insta has two major types of snapshots: file and inline snapshots. The former
+are placed as separate <code>.snap</code> files, the latter are stored inline in string
+literals in the <code>.rs</code> files.</p>
+<p>File snapshots are stored in the <code>snapshots</code> folder right next to the test file
+where this is used (or in a user defined location by
+<a href="https://docs.rs/insta/latest/insta/struct.Settings.html#method.snapshot_path">changing settings</a>).
+The name of the file is <code>&lt;module&gt;__&lt;name&gt;.snap</code> where
+the <code>name</code> of the snapshot. Snapshots can either be explicitly named or the
+name is derived from the test name.</p>
+<p>The format of snapshot files <a href="../snapshot-files/">is documented here</a>.</p>
+<h2 id="file-snapshots">File snapshots</h2>
+<h3 id="unnamed-snapshots">Unnamed snapshots</h3>
+<p>All snapshot assertion functions let you leave out the snapshot name in which
+case the snapshot name is derived from the function name (with an optional
+leading <code>test_</code> prefix removed, as it is typically the test name).</p>
+<p>These are two assertions that use implicitly named snapshots:</p>
+<pre data-lang="rust" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-rust "><code class="language-rust" data-lang="rust"><span>#[</span><span style="color:#5597d6;">test</span><span>]
+</span><span style="color:#668f14;">fn </span><span style="color:#c23f31;">test_something</span><span>() {
+</span><span>    </span><span style="color:#a2a001;">assert_snapshot!</span><span>(</span><span style="color:#d07711;">&quot;first value&quot;</span><span>);
+</span><span>    </span><span style="color:#a2a001;">assert_snapshot!</span><span>(</span><span style="color:#d07711;">&quot;second value&quot;</span><span>);
+</span><span>}
+</span></code></pre>
+<p>This creates two snapshots named <code>something</code> and <code>something-2</code>.</p>
+<h3 id="named-snapshots">Named snapshots</h3>
+<p>Explicit snapshot naming can be useful to be more explicit when multiple
+snapshots are tested within one function as the default behavior would be to
+just count up the snapshot names.</p>
+<p>To provide an explicit name provide the name of the snapshot as first
+argument to the macro:</p>
+<pre data-lang="rust" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-rust "><code class="language-rust" data-lang="rust"><span>#[</span><span style="color:#5597d6;">test</span><span>]
+</span><span style="color:#668f14;">fn </span><span style="color:#c23f31;">test_something</span><span>() {
+</span><span>    </span><span style="color:#a2a001;">assert_snapshot!</span><span>(</span><span style="color:#d07711;">&quot;first_snapshot&quot;</span><span>, </span><span style="color:#d07711;">&quot;first value&quot;</span><span>);
+</span><span>    </span><span style="color:#a2a001;">assert_snapshot!</span><span>(</span><span style="color:#d07711;">&quot;second_snapshot&quot;</span><span>, </span><span style="color:#d07711;">&quot;second value&quot;</span><span>);
+</span><span>}
+</span></code></pre>
+<p>This will create two snapshots: <code>first_snapshot</code> for the first value and
+<code>second_snapshot</code> for the second value.</p>
+<h2 id="inline-snapshots">Inline snapshots</h2>
+<p>Snapshots can also be stored inline. In that case the format
+for the snapshot macros is <code>assert_snapshot!(reference_value, @&quot;snapshot&quot;)</code>.
+The leading at sign (<code>@</code>) indicates that the following string is the
+reference value. <code>cargo-insta</code> will then update that string with the new
+value on review:</p>
+<pre data-lang="rust" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-rust "><code class="language-rust" data-lang="rust"><span>#[</span><span style="color:#5597d6;">derive</span><span>(Serialize)]
+</span><span style="color:#668f14;">pub struct </span><span style="color:#c23f31;">User </span><span>{
+</span><span>    </span><span style="color:#5597d6;">username</span><span>: String,
+</span><span>}
+</span><span>
+</span><span style="color:#a2a001;">assert_yaml_snapshot!</span><span>(User {
+</span><span>    username: </span><span style="color:#d07711;">&quot;john_doe&quot;</span><span>.</span><span style="color:#b39f04;">to_string</span><span>(),
+</span><span>}, </span><span style="color:#72ab00;">@</span><span style="color:#d07711;">&quot;&quot;</span><span>);
+</span></code></pre>
+<p>After the initial test failure you can run <code>cargo insta review</code> to
+accept the change. The file will then be updated automatically and the
+reference value will be placed in the macro invocation. Note that inline
+snapshots require the use of <code>cargo-insta</code>.</p>
+<h2 id="binary-snapshots-experimental">Binary snapshots (experimental)</h2>
+<p>Binary snapshots store their content in a separate file next to the metadata
+file. This enables opening them in external tools. They are simply compared byte
+for byte.</p>
+<pre data-lang="rust" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-rust "><code class="language-rust" data-lang="rust"><span>#[</span><span style="color:#5597d6;">test</span><span>]
+</span><span style="color:#668f14;">fn </span><span style="color:#c23f31;">test_something</span><span>() {
+</span><span>    </span><span style="color:#7f8989;">// implicit name:
+</span><span>    insta::assert_binary_snapshot</span><span style="color:#72ab00;">!</span><span>(</span><span style="color:#d07711;">&quot;.txt&quot;</span><span>, </span><span style="color:#668f14;">b</span><span style="color:#d07711;">&quot;abcd&quot;</span><span>.</span><span style="color:#b39f04;">to_vec</span><span>());
+</span><span>
+</span><span>    </span><span style="color:#7f8989;">// named:
+</span><span>    insta::assert_binary_snapshot</span><span style="color:#72ab00;">!</span><span>(</span><span style="color:#d07711;">&quot;my_snapshot.bin&quot;</span><span>, [</span><span style="color:#b3933a;">0</span><span>, </span><span style="color:#b3933a;">1</span><span>, </span><span style="color:#b3933a;">2</span><span>, </span><span style="color:#b3933a;">3</span><span>].</span><span style="color:#b39f04;">to_vec</span><span>());
+</span><span>}
+</span></code></pre>
+<h2 id="debug-expressions">Debug expressions</h2>
+<p>Snapshots optionally accept a debug expression, which can be helpful for adding
+contextual information to the snapshot. Where this isn't provided, insta
+defaults to the stringified expression.</p>
+<pre data-lang="rust" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-rust "><code class="language-rust" data-lang="rust"><span>#[</span><span style="color:#5597d6;">test</span><span>]
+</span><span style="color:#668f14;">fn </span><span style="color:#c23f31;">test_something</span><span>() {
+</span><span>    </span><span style="color:#7f8989;">// debug expr is &quot;helpful info&quot;
+</span><span>    </span><span style="color:#a2a001;">assert_snapshot!</span><span>(</span><span style="color:#d07711;">&quot;snapshot&quot;</span><span>, expr_1, </span><span style="color:#d07711;">&quot;helpful info&quot;</span><span>);
+</span><span>    </span><span style="color:#7f8989;">// No debug expr is passed so — `&quot;expr_1&quot;` is the debug expr
+</span><span>    </span><span style="color:#a2a001;">assert_snapshot!</span><span>(</span><span style="color:#d07711;">&quot;snapshot_no_debug&quot;</span><span>, expr_1);
+</span><span>}
+</span></code></pre>
+<h2 id="snapshot-types-list">Snapshot types list</h2>
+<p>Here's a full list of formats that snapshots macros accept:</p>
+<table><thead><tr><th>Snapshot type</th><th>Example</th></tr></thead><tbody>
+<tr><td>File, named</td><td><code>assert_snapshot!(&quot;name&quot;, expr)</code></td></tr>
+<tr><td>File, named, debug expr</td><td><code>assert_snapshot!(&quot;name&quot;, expr, &quot;debug_expr&quot;)</code></td></tr>
+<tr><td>File, unnamed</td><td><code>assert_snapshot!(expr)</code></td></tr>
+<tr><td>File, redacted, named</td><td><code>assert_yaml_snapshot!(&quot;name&quot;, expr, {&quot;.&quot; =&gt; sorted_redaction()})</code></td></tr>
+<tr><td>File, redacted, named, debug expr</td><td><code>assert_yaml_snapshot!(&quot;name&quot;, expr, {&quot;.&quot; =&gt; sorted_redaction()}, &quot;debug_expr&quot;)</code></td></tr>
+<tr><td>File, redacted, unnamed</td><td><code>assert_yaml_snapshot!(expr, {&quot;.&quot; =&gt; sorted_redaction()})</code></td></tr>
+<tr><td>Inline</td><td><code>assert_snapshot!(expr, @&quot;result&quot;)</code></td></tr>
+<tr><td>Inline, redacted</td><td><code>assert_snapshot!(expr, {&quot;.&quot; =&gt; sorted_redaction()}, @&quot;result&quot;)</code></td></tr>
+</tbody></table>
+
+
+
+
+
+        
+          
+        
+
+        
+          <div class="source-hint">
+            Found an issue?
+            You can
+            <a href="https://github.com/mitsuhiko&#x2F;insta-website/edit/main/content/docs&#x2F;snapshot-types.md">edit this page</a>
+            on GitHub.
+          </div>
+        
+      </div>
+    </main>
+
+    
+<footer>
+  <span>
+    Created by <a href="https://lucumr.pocoo.org/">Armin Ronacher</a>
+  </span>
+  <span><a href="https://github.com/mitsuhiko/insta">Github</a></span>
+  <span><a href="https://github.com/mitsuhiko/insta/issues">Issues</a></span>
+  <span><a href="https://docs.rs/insta">API Documentation</a></span>
+  <span><a href="/similar/">Similar</a></span>
+  <span><a href="https://crates.io/crates/io">Crate</a></span>
+</footer>
+
+    <script>
+      function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+          item.classList.remove("active");
+        });
+        document
+          .querySelector(".toc a[href$='" + pathname + "#" + heading + "']")
+          .classList.add("active");
+      }
+
+      let currentHeading = "";
+      window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach((item) => {
+          if (item.id !== "") {
+            elementArr[item.id] = item.getBoundingClientRect().top;
+          }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+          if (!elementArr.hasOwnProperty(key)) {
+            continue;
+          }
+          if (elementArr[key] > 0 && elementArr[key] < 300) {
+            if (currentHeading !== key) {
+              highlightNav(key);
+              currentHeading = key;
+            }
+            break;
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

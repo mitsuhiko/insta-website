@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Patterns | Insta Snapshots</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    >
+    <style>
+  :root {
+    /* Primary theme color */
+    --primary-color: #86bbd8;
+    /* Primary theme text color */
+    --primary-text-color: #2f4858;
+    /* Primary theme link color */
+    --primary-link-color: #336699;
+    /* Secondary color: the background body color */
+    --secondary-color: #d0e3ee;
+    --secondary-text-color: #303030;
+    /* Light background */
+    --light-color: #edf6fb;
+    /* Highlight text color of table of content */
+    --toc-highlight-text-color: #336699;
+    --toc-highlight-background-color: var(--light-color);
+  }
+</style>
+
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+      rel="stylesheet"> 
+    <link
+      href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,600&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="https://insta.rs/juice.css">
+    
+      
+      
+    
+    <meta property="title" content="Patterns">
+    <meta property="og:title" content="Patterns">
+    <meta property="og:site_name" content="Insta Snapshots">
+    <meta property="og:image" content="https://insta.rs/logo.png" />
+    <meta name="twitter:site" content="@mitsuhiko">
+    <meta name="twitter:title" content="Patterns" />
+    <meta name="description" content="Patterns
+This is a collection of common patterns for how to best use Insta in some more complex
+setu…">
+    <meta name="og:description" content="Patterns
+This is a collection of common patterns for how to best use Insta in some more complex
+setu…">
+    <meta name="twitter:description" content="Patterns
+This is a collection of common patterns for how to best use Insta in some more complex
+setu…">
+    <meta name="twitter:card" content="summary">
+    
+  </head>
+
+  <body>
+    
+<header>
+   
+<a href="https:&#x2F;&#x2F;insta.rs&#x2F;">
+  <div class="logo">
+    <img src="https://insta.rs/icon.png" alt="logo" />
+    Insta
+  </div>
+</a>
+
+<nav>
+  
+  <a class="nav-item subtitle-text" href="&#x2F;docs&#x2F;">Docs</a>
+  
+  <a class="nav-item subtitle-text" href="&#x2F;changelog&#x2F;">Changelog</a>
+  
+  <a class="nav-item subtitle-text" href="&#x2F;similar&#x2F;">Similar</a>
+  
+  <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;mitsuhiko&#x2F;insta">GitHub</a>
+  
+  <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;insta">Crate</a>
+  
+</nav>
+
+</header>
+
+
+    <main>
+      
+        
+          
+        
+        
+          
+        
+        
+          
+        
+        <label for="toc-toggle" class="toggle-toc"><span>Toggle Navigation</span></label>
+        <input type="checkbox" id="toc-toggle">
+        <div class="toc">
+          <div class="toc-sticky">
+            
+            
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;">Overview</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;quickstart&#x2F;">Getting Started</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;snapshot-types&#x2F;">Snapshot Types</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;serializers&#x2F;">Serializers</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;snapshot-files&#x2F;">Snapshot Files</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;redactions&#x2F;">Redactions</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;filters&#x2F;">Filters</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;advanced&#x2F;">Advanced Features</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;cmd&#x2F;">Testing CLIs</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;settings&#x2F;">Settings</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext current" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;patterns&#x2F;">Patterns</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;cli&#x2F;">Cargo Insta</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;vscode&#x2F;">VS Code Extension</a>
+              </div>
+              
+              
+                
+                <div class="toc-item">
+                  <a class="subtext external" href="https:&#x2F;&#x2F;docs.rs&#x2F;insta">API Docs</a>
+                </div>
+                
+              
+              
+            
+            
+              
+              <hr>
+              
+              
+                <div class="toc-item">
+                  <a class="current" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;patterns&#x2F;#patterns">Patterns</a>
+                </div>
+                
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;patterns&#x2F;#rstest">rstest</a>
+                  </div>
+                  
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;patterns&#x2F;#uploading-snapshots-from-github-actions">Uploading Snapshots from GitHub Actions</a>
+                  </div>
+                  
+                  
+                
+              
+            
+          </div>
+        </div>
+      
+
+      <div class="content text">
+        
+<h1 id="patterns">Patterns</h1>
+<p>This is a collection of common patterns for how to best use Insta in some more complex
+setups.</p>
+<h2 id="rstest">rstest</h2>
+<p>If you are using the <a href="https://crates.io/crates/rstest">rstest crate</a>, more specifically the
+<code>#[case]</code> feature you might want to use this pattern to ensure a pleasant experience.  Because
+rstest will parametrize your tests insta will normally have challenges associating your
+snapshots with the right parametrized test.  In that situation you can use the following macro
+to add a suffix to your snapshot tests specific to your input values:</p>
+<pre data-lang="rust" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b39f04;">macro_rules! </span><span style="color:#c23f31;">set_snapshot_suffix </span><span>{
+</span><span>    (</span><span style="color:#72ab00;">$</span><span>(</span><span style="color:#5597d6;">$expr</span><span>:</span><span style="color:#668f14;">expr</span><span>),</span><span style="color:#72ab00;">*</span><span>) </span><span style="color:#72ab00;">=&gt; </span><span>{
+</span><span>        </span><span style="color:#668f14;">let mut</span><span> settings </span><span style="color:#72ab00;">= </span><span>insta::Settings::clone_current();
+</span><span>        settings.</span><span style="color:#b39f04;">set_snapshot_suffix</span><span>(</span><span style="color:#a2a001;">format!</span><span>(</span><span style="color:#72ab00;">$</span><span>(</span><span style="color:#5597d6;">$expr</span><span>,)</span><span style="color:#72ab00;">*</span><span>));
+</span><span>        </span><span style="color:#668f14;">let</span><span> _guard </span><span style="color:#72ab00;">=</span><span> settings.</span><span style="color:#b39f04;">bind_to_scope</span><span>();
+</span><span>    }
+</span><span>}
+</span></code></pre>
+<p>After that you can trivially set the snapshot suffix in your parametrized test:</p>
+<pre data-lang="rust" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-rust "><code class="language-rust" data-lang="rust"><span>#[</span><span style="color:#5597d6;">rstest</span><span>]
+</span><span>#[</span><span style="color:#5597d6;">case</span><span>(0, 2)]
+</span><span>#[</span><span style="color:#5597d6;">case</span><span>(2, 4)]
+</span><span style="color:#668f14;">fn </span><span style="color:#c23f31;">test_it</span><span>(#[case] </span><span style="color:#5597d6;">a</span><span>: </span><span style="color:#668f14;">usize</span><span>, #[case] </span><span style="color:#5597d6;">b</span><span>: </span><span style="color:#668f14;">usize</span><span>) {
+</span><span>    </span><span style="color:#a2a001;">set_snapshot_suffix!</span><span>(</span><span style="color:#d07711;">&quot;{}-{}&quot;</span><span>, a, b);
+</span><span>    insta::assert_debug_snapshot</span><span style="color:#72ab00;">!</span><span>(a </span><span style="color:#72ab00;">*</span><span> b);
+</span><span>}
+</span></code></pre>
+<p>In the above example the snapshots will then be named as follows:</p>
+<pre style="background-color:#f5f5f5;color:#1f1f1f;"><code><span>tests/snapshots/example__it@0-2.snap
+</span><span>tests/snapshots/example__it@2-4.snap
+</span></code></pre>
+<h2 id="uploading-snapshots-from-github-actions">Uploading Snapshots from GitHub Actions</h2>
+<p>By default when running in a CI environment, insta won't generate new snapshot files.  When you
+use GitHub Actions however you can upload build artifacts after the test run to download the
+changed artifacts.  To accomplish this you need to force insta to write new snapshot files.</p>
+<p>The following configuration forces files to be created and creates an artifact of all new
+snapshot files.</p>
+<pre data-lang="yaml" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-yaml "><code class="language-yaml" data-lang="yaml"><span style="color:#7f902a;">jobs</span><span>:
+</span><span>  </span><span style="color:#7f902a;">test</span><span>:
+</span><span>    </span><span style="color:#7f902a;">name</span><span>: </span><span style="color:#d07711;">Snapshot Tests
+</span><span>    </span><span style="color:#7f902a;">runs-on</span><span>: </span><span style="color:#d07711;">ubuntu-latest
+</span><span>
+</span><span>    </span><span style="color:#7f902a;">steps</span><span>:
+</span><span>      - </span><span style="color:#7f902a;">uses</span><span>: </span><span style="color:#d07711;">actions/checkout@v3
+</span><span>      - </span><span style="color:#7f902a;">uses</span><span>: </span><span style="color:#d07711;">dtolnay/rust-toolchain@master
+</span><span>        </span><span style="color:#7f902a;">with</span><span>:
+</span><span>          </span><span style="color:#7f902a;">toolchain</span><span>: </span><span style="color:#d07711;">stable
+</span><span>      - </span><span style="color:#7f902a;">name</span><span>: </span><span style="color:#d07711;">Test
+</span><span>        </span><span style="color:#7f902a;">id</span><span>: </span><span style="color:#d07711;">run_tests
+</span><span>        </span><span style="color:#7f902a;">run</span><span>: </span><span style="color:#d07711;">cargo test --all-features
+</span><span>        </span><span style="color:#7f902a;">env</span><span>:
+</span><span>          </span><span style="color:#7f902a;">INSTA_UPDATE</span><span>: </span><span style="color:#d07711;">new
+</span><span>      - </span><span style="color:#7f902a;">name</span><span>: </span><span style="color:#d07711;">Upload snapshots of failed tests
+</span><span>          </span><span style="color:#7f902a;">if</span><span>: </span><span style="color:#d07711;">${{ failure() &amp;&amp; steps.run_tests.outcome == &#39;failure&#39; }}
+</span><span>          </span><span style="color:#7f902a;">uses</span><span>: </span><span style="color:#d07711;">actions/upload-artifact@v3
+</span><span>          </span><span style="color:#7f902a;">with</span><span>:
+</span><span>            </span><span style="color:#7f902a;">name</span><span>: </span><span style="color:#d07711;">failed-snapshots
+</span><span>            </span><span style="color:#7f902a;">path</span><span>: </span><span style="color:#d07711;">&quot;**/snapshots/*.snap.new&quot;
+</span></code></pre>
+
+
+
+
+
+        
+          
+        
+
+        
+          <div class="source-hint">
+            Found an issue?
+            You can
+            <a href="https://github.com/mitsuhiko&#x2F;insta-website/edit/main/content/docs&#x2F;patterns.md">edit this page</a>
+            on GitHub.
+          </div>
+        
+      </div>
+    </main>
+
+    
+<footer>
+  <span>
+    Created by <a href="https://lucumr.pocoo.org/">Armin Ronacher</a>
+  </span>
+  <span><a href="https://github.com/mitsuhiko/insta">Github</a></span>
+  <span><a href="https://github.com/mitsuhiko/insta/issues">Issues</a></span>
+  <span><a href="https://docs.rs/insta">API Documentation</a></span>
+  <span><a href="/similar/">Similar</a></span>
+  <span><a href="https://crates.io/crates/io">Crate</a></span>
+</footer>
+
+    <script>
+      function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+          item.classList.remove("active");
+        });
+        document
+          .querySelector(".toc a[href$='" + pathname + "#" + heading + "']")
+          .classList.add("active");
+      }
+
+      let currentHeading = "";
+      window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach((item) => {
+          if (item.id !== "") {
+            elementArr[item.id] = item.getBoundingClientRect().top;
+          }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+          if (!elementArr.hasOwnProperty(key)) {
+            continue;
+          }
+          if (elementArr[key] > 0 && elementArr[key] < 300) {
+            if (currentHeading !== key) {
+              highlightNav(key);
+              currentHeading = key;
+            }
+            break;
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
