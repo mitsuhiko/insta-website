@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Insta Snapshots</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    >
+    <style>
+  :root {
+    /* Primary theme color */
+    --primary-color: #86bbd8;
+    /* Primary theme text color */
+    --primary-text-color: #2f4858;
+    /* Primary theme link color */
+    --primary-link-color: #336699;
+    /* Secondary color: the background body color */
+    --secondary-color: #d0e3ee;
+    --secondary-text-color: #303030;
+    /* Light background */
+    --light-color: #edf6fb;
+    /* Highlight text color of table of content */
+    --toc-highlight-text-color: #336699;
+    --toc-highlight-background-color: var(--light-color);
+  }
+</style>
+
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+      rel="stylesheet"> 
+    <link
+      href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,600&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="https://insta.rs/juice.css">
+    
+      
+      
+    
+    <meta property="title" content="Insta Snapshots">
+    <meta property="og:title" content="Insta Snapshots">
+    <meta property="og:site_name" content="Insta Snapshots">
+    <meta property="og:image" content="https://insta.rs/logo.png" />
+    <meta name="twitter:site" content="@mitsuhiko">
+    <meta name="twitter:title" content="Insta Snapshots" />
+    <meta name="description" content="Insta is an enjoyable snapshot testing tool for Rust.">
+    <meta name="og:description" content="Insta is an enjoyable snapshot testing tool for Rust.">
+    <meta name="twitter:description" content="Insta is an enjoyable snapshot testing tool for Rust.">
+    <meta name="twitter:card" content="summary">
+    
+  </head>
+
+  <body>
+    
+
+    <header class="pos-absolute" style="background-color: transparent">
+       
+<a href="https:&#x2F;&#x2F;insta.rs&#x2F;">
+  <div class="logo">
+    <img src="https://insta.rs/icon.png" alt="logo" />
+    Insta
+  </div>
+</a>
+
+<nav>
+  
+  <a class="nav-item subtitle-text" href="&#x2F;docs&#x2F;">Docs</a>
+  
+  <a class="nav-item subtitle-text" href="&#x2F;changelog&#x2F;">Changelog</a>
+  
+  <a class="nav-item subtitle-text" href="&#x2F;similar&#x2F;">Similar</a>
+  
+  <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;mitsuhiko&#x2F;insta">GitHub</a>
+  
+  <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;insta">Crate</a>
+  
+</nav>
+
+    </header>
+
+    <div class="hero">
+      
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<style>
+  .welcome {
+    animation: welcome-animation 1s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+    animation-delay: 0.25s;
+  }
+
+  .hero-image {
+    animation: logo-animation 2s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+  }
+
+  .explore-more, .logo, nav {
+    animation: fade-in-animation 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+    animation-delay: 0.5s;
+  }
+
+  @keyframes logo-animation {
+    0% {
+      transform: rotateY(-40deg) rotateZ(90deg) translateX(-50%);
+      filter: blur(50px);
+      opacity: 0;
+    }
+    50% {
+      filter: blur(0);
+    }
+    70% {
+      opacity: 1;
+      transform: rotateY(-10deg) rotateZ(10deg) translateX(5%);
+    }
+    100% {
+      transform: rotateY(0) rotateZ(0) translateX(0);
+    }
+  }
+
+  @keyframes fade-in-animation {
+    0% {
+      filter: blur(10px);
+      opacity: 0;
+    }
+    30% {
+      filter: blur(0);
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes welcome-animation {
+    0% {
+      transform: translateY(60%);
+      filter: blur(10px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+
+  .hero section {
+    padding: 0 5rem;
+  }
+  @media screen and (max-width: 768px) {
+    .hero section {
+      padding: 0 2rem;
+    }
+
+    .hero-image {
+      display: none;
+    }
+  }
+</style>
+<section class="text-center welcome">
+  <h1 class="heading-text" style="font-size: 50px">Insta Snapshots</h1>
+  <h3 class="title-text">
+    <b>Insta</b> is an enjoyable snapshot testing tool for Rust.
+  </h3>
+  <p>
+    <a class="github-button" href="https://github.com/mitsuhiko/insta" data-size="large" data-show-count="true" aria-label="Star mitsuhiko/insta on GitHub">Star</a>
+    <a class="github-button" href="https://github.com/sponsors/mitsuhiko" data-size="large" data-icon="octicon-heart" aria-label="Sponsor @mitsuhiko on GitHub">Sponsor</a>
+  </p>
+</section>
+<img class="hero-image" style="width: 35%" src="https://insta.rs/logo.png">
+
+<div
+  class="explore-more text"
+  onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})"
+>Learn More ⇣</div>
+
+    </div>
+
+    
+
+    <main>
+      
+        
+          
+        
+        
+        
+          
+        
+        <label for="toc-toggle" class="toggle-toc"><span>Toggle Navigation</span></label>
+        <input type="checkbox" id="toc-toggle">
+        <div class="toc">
+          <div class="toc-sticky">
+            
+            
+            
+              
+              
+                <div class="toc-item">
+                  <a class="current" href="https:&#x2F;&#x2F;insta.rs&#x2F;#hello-snapshot-testing">Hello Snapshot Testing</a>
+                </div>
+                
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;#what-s-in-the-box">What&#x27;s in the Box?</a>
+                  </div>
+                  
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;#what-does-this-look-like">What Does This Look Like?</a>
+                  </div>
+                  
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;#test-workflow">Test Workflow</a>
+                  </div>
+                  
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;#learn-more">Learn More</a>
+                  </div>
+                  
+                  
+                
+              
+            
+          </div>
+        </div>
+      
+
+      <div class="content text">
+        
+        <a id="features"></a>
+        <h1 id="hello-snapshot-testing">Hello Snapshot Testing</h1>
+<p><a href="https://github.com/mitsuhiko/insta/actions?query=workflow%3ATests"><img src="https://github.com/mitsuhiko/insta/workflows/Tests/badge.svg?branch=master" alt="Build Status" /></a>
+<a href="https://crates.io/crates/insta"><img src="https://img.shields.io/crates/d/insta.svg" alt="Crates.io" /></a>
+<a href="https://github.com/mitsuhiko/insta/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mitsuhiko/insta" alt="License" /></a>
+<a href="https://docs.rs/insta"><img src="https://docs.rs/insta/badge.svg" alt="Documentation" /></a></p>
+<p>Snapshots tests (also sometimes called approval tests) are tests that assert
+values against a reference value (the snapshot).  Think of it as a supercharged
+version of <code>assert_eq!</code>.  It lets you compare a value against a reference
+value but unlike simple assertions the reference value is managed by <code>insta</code>
+for you.</p>
+<h2 id="what-s-in-the-box">What's in the Box?</h2>
+<ul>
+<li><strong>Interactive snapshot reviews</strong>: with <code>cargo-insta</code> you can perform reviews
+of all changed snapshots conveniently.</li>
+<li><strong>Inline snapshots</strong>: insta can store snapshots right within your source file.</li>
+<li><strong>External snapshots</strong>: it's also possible to store snapshots as separate files.</li>
+<li><strong>Redactions</strong>: if you have output which can change between test runs (such as
+random identifiers, timestamps or others) you can instruct insta to redact these parts.</li>
+<li><strong>Flexible formats</strong>: you can pick between snapshoting into different formats
+such as JSON, YAML, TOML, CSV or others.</li>
+<li><strong>Editor Support</strong>: insta also provides a <a href="https://marketplace.visualstudio.com/items?itemName=mitsuhiko.insta">VS Code Extension</a>
+that lets you review snapshots right from within your editor.</li>
+<li><strong>Pretty Diffs</strong>: insta renders beautiful snapshot diffs right in your
+terminal with the help of the <a href="/similar/">similar</a> crate.</li>
+<li><strong>Supports older Rust:</strong> insta, similar and <a href="https://github.com/mitsuhiko/similar-asserts">similar-asserts</a> support Rust down to 1.51.</li>
+<li><strong>Apache-2.0 licensed</strong>: because the best tools are Open Source under a convenient license.</li>
+</ul>
+<h2 id="what-does-this-look-like">What Does This Look Like?</h2>
+<p>Pretty simple.  You write a test function where you perform some sort of
+computation and then use one of the <code>insta</code> provided assertion macros:</p>
+<pre data-lang="rust" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-rust "><code class="language-rust" data-lang="rust"><span>#[</span><span style="color:#5597d6;">test</span><span>]
+</span><span style="color:#668f14;">fn </span><span style="color:#c23f31;">test_simple</span><span>() {
+</span><span>    insta::assert_yaml_snapshot</span><span style="color:#72ab00;">!</span><span>(</span><span style="color:#b39f04;">calculate_value</span><span>());
+</span><span>}
+</span></code></pre>
+<p>Note that no reference value is provided.  Instead the reference value is placed
+on the first test run in a separate snapshot file.  Insta will automatically
+manage that snapshot for you.</p>
+<h2 id="test-workflow">Test Workflow</h2>
+<p>This is what this process looks like in an actual example:</p>
+<div class="termcast"><img src="demo.svg" alt=""></div>
+<h2 id="learn-more">Learn More</h2>
+<p>Want to learn more?</p>
+<ul>
+<li>There is a 12 minute introduction screencast that walks you through how it works:
+<a href="https://www.youtube.com/embed/rCHrMqE4JOY">Snapshot Testing with Insta</a></li>
+<li>Read <a href="/docs/quickstart">the quickstart</a> for more information</li>
+<li>Read <a href="https://docs.rs/insta">the API documentation</a> for a deep dive on the API</li>
+</ul>
+
+        
+
+        
+          
+        
+
+        
+          <div class="source-hint">
+            Found an issue?
+            You can
+            <a href="https://github.com/mitsuhiko&#x2F;insta-website/edit/main/content/_index.md">edit this page</a>
+            on GitHub.
+          </div>
+        
+      </div>
+    </main>
+
+    
+<footer>
+  <span>
+    Created by <a href="https://lucumr.pocoo.org/">Armin Ronacher</a>
+  </span>
+  <span><a href="https://github.com/mitsuhiko/insta">Github</a></span>
+  <span><a href="https://github.com/mitsuhiko/insta/issues">Issues</a></span>
+  <span><a href="https://docs.rs/insta">API Documentation</a></span>
+  <span><a href="/similar/">Similar</a></span>
+  <span><a href="https://crates.io/crates/io">Crate</a></span>
+</footer>
+
+    <script>
+      function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+          item.classList.remove("active");
+        });
+        document
+          .querySelector(".toc a[href$='" + pathname + "#" + heading + "']")
+          .classList.add("active");
+      }
+
+      let currentHeading = "";
+      window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach((item) => {
+          if (item.id !== "") {
+            elementArr[item.id] = item.getBoundingClientRect().top;
+          }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+          if (!elementArr.hasOwnProperty(key)) {
+            continue;
+          }
+          if (elementArr[key] > 0 && elementArr[key] < 300) {
+            if (currentHeading !== key) {
+              highlightNav(key);
+              currentHeading = key;
+            }
+            break;
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

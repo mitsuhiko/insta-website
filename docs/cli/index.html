@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cargo Insta | Insta Snapshots</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    >
+    <style>
+  :root {
+    /* Primary theme color */
+    --primary-color: #86bbd8;
+    /* Primary theme text color */
+    --primary-text-color: #2f4858;
+    /* Primary theme link color */
+    --primary-link-color: #336699;
+    /* Secondary color: the background body color */
+    --secondary-color: #d0e3ee;
+    --secondary-text-color: #303030;
+    /* Light background */
+    --light-color: #edf6fb;
+    /* Highlight text color of table of content */
+    --toc-highlight-text-color: #336699;
+    --toc-highlight-background-color: var(--light-color);
+  }
+</style>
+
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+      rel="stylesheet"> 
+    <link
+      href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,600&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="https://insta.rs/juice.css">
+    
+      
+      
+    
+    <meta property="title" content="Cargo Insta">
+    <meta property="og:title" content="Cargo Insta">
+    <meta property="og:site_name" content="Insta Snapshots">
+    <meta property="og:image" content="https://insta.rs/logo.png" />
+    <meta name="twitter:site" content="@mitsuhiko">
+    <meta name="twitter:title" content="Cargo Insta" />
+    <meta name="description" content="Cargo Insta
+Cargo Insta is the companion command line tool to assist with snapshot reviewing.
+It&#x27;s n…">
+    <meta name="og:description" content="Cargo Insta
+Cargo Insta is the companion command line tool to assist with snapshot reviewing.
+It&#x27;s n…">
+    <meta name="twitter:description" content="Cargo Insta
+Cargo Insta is the companion command line tool to assist with snapshot reviewing.
+It&#x27;s n…">
+    <meta name="twitter:card" content="summary">
+    
+  </head>
+
+  <body>
+    
+<header>
+   
+<a href="https:&#x2F;&#x2F;insta.rs&#x2F;">
+  <div class="logo">
+    <img src="https://insta.rs/icon.png" alt="logo" />
+    Insta
+  </div>
+</a>
+
+<nav>
+  
+  <a class="nav-item subtitle-text" href="&#x2F;docs&#x2F;">Docs</a>
+  
+  <a class="nav-item subtitle-text" href="&#x2F;changelog&#x2F;">Changelog</a>
+  
+  <a class="nav-item subtitle-text" href="&#x2F;similar&#x2F;">Similar</a>
+  
+  <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;mitsuhiko&#x2F;insta">GitHub</a>
+  
+  <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;insta">Crate</a>
+  
+</nav>
+
+</header>
+
+
+    <main>
+      
+        
+          
+        
+        
+          
+        
+        
+          
+        
+        <label for="toc-toggle" class="toggle-toc"><span>Toggle Navigation</span></label>
+        <input type="checkbox" id="toc-toggle">
+        <div class="toc">
+          <div class="toc-sticky">
+            
+            
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;">Overview</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;quickstart&#x2F;">Getting Started</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;snapshot-types&#x2F;">Snapshot Types</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;serializers&#x2F;">Serializers</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;snapshot-files&#x2F;">Snapshot Files</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;redactions&#x2F;">Redactions</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;filters&#x2F;">Filters</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;advanced&#x2F;">Advanced Features</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;cmd&#x2F;">Testing CLIs</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;settings&#x2F;">Settings</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;patterns&#x2F;">Patterns</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext current" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;cli&#x2F;">Cargo Insta</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;vscode&#x2F;">VS Code Extension</a>
+              </div>
+              
+              
+                
+                <div class="toc-item">
+                  <a class="subtext external" href="https:&#x2F;&#x2F;docs.rs&#x2F;insta">API Docs</a>
+                </div>
+                
+              
+              
+            
+            
+              
+              <hr>
+              
+              
+                <div class="toc-item">
+                  <a class="current" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;cli&#x2F;#cargo-insta">Cargo Insta</a>
+                </div>
+                
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;cli&#x2F;#installation">Installation</a>
+                  </div>
+                  
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;cli&#x2F;#configuration">Configuration</a>
+                  </div>
+                  
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;cli&#x2F;#commands">Commands</a>
+                  </div>
+                  
+                    
+                    <div class="toc-item-child">
+                      <a class="small-subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;cli&#x2F;#review">review</a>
+                    </div>
+                    
+                    <div class="toc-item-child">
+                      <a class="small-subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;cli&#x2F;#accept">accept</a>
+                    </div>
+                    
+                    <div class="toc-item-child">
+                      <a class="small-subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;cli&#x2F;#reject">reject</a>
+                    </div>
+                    
+                    <div class="toc-item-child">
+                      <a class="small-subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;cli&#x2F;#pending-snapshots">pending-snapshots</a>
+                    </div>
+                    
+                    <div class="toc-item-child">
+                      <a class="small-subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;cli&#x2F;#test">test</a>
+                    </div>
+                    
+                  
+                  
+                
+              
+            
+          </div>
+        </div>
+      
+
+      <div class="content text">
+        
+<h1 id="cargo-insta">Cargo Insta</h1>
+<p>Cargo Insta is the companion command line tool to assist with snapshot reviewing.
+It's not necessary for working with regular snapshots but it's required when
+working with inline snapshots.</p>
+<h2 id="installation">Installation</h2>
+<p>Cargo Insta can be installed with <code>curl</code> to bash or powershell if you haven't yet.</p>
+<p>On Unix (Linux and macOS):</p>
+<pre style="background-color:#f5f5f5;color:#1f1f1f;"><code><span>curl -LsSf https://insta.rs/install.sh | sh
+</span></code></pre>
+<p>On Windows:</p>
+<pre style="background-color:#f5f5f5;color:#1f1f1f;"><code><span>powershell -c &quot;irm https://insta.rs/install.ps1 | iex&quot;
+</span></code></pre>
+<p>Alternatively you can also manually install it with <code>cargo install</code>:</p>
+<pre style="background-color:#f5f5f5;color:#1f1f1f;"><code><span>cargo install cargo-insta
+</span></code></pre>
+<p>You can also update it this way.  After installation it becomes available as <code>cargo insta</code>.</p>
+<h2 id="configuration">Configuration</h2>
+<p><code>cargo-insta</code> will load the <code>insta.yaml</code> config file from the workspace which
+can be used to influence its behavior.  For more information on this have a look
+<a href="../settings/#tool-config-file">at the settings configuration</a>.</p>
+<h2 id="commands">Commands</h2>
+<p>Cargo Insta comes with a few different commands.</p>
+<p><strong>Common Options</strong></p>
+<ul>
+<li><code>--color</code>: controls if colors should be used.  The default is auto detection (<code>auto</code>),
+alternative values are <code>always</code> and <code>none</code> to force colors on or off.</li>
+<li><code>--manifest-path</code>: the path to the manifest file (<code>Cargo.toml</code>).  If not provided
+the workspace is auto discovered based on the current working directory.</li>
+<li><code>--workspace-root</code>: this is an alternative to <code>--manifest-path</code> which lets you
+point insta directly at a workspace folder.  If this parameter is used the
+<code>Cargo.toml</code> file can be emitted in which case you can review snapshots that
+are placed outside of a rust package.</li>
+<li><code>-e</code> / <code>--extensions</code>: lets you instruct cargo to consider other file extensions
+than <code>.snap</code>.  This is discouraged and should only be used in certain more
+advanced scenarios.</li>
+<li><code>--include-ignored</code>: by default cargo insta will honor common ignore files such
+as <code>.gitignore</code> or <code>.ignore</code>.  When this flag is passed snapshots are also
+discovered if they would otherwise be ignored. (Legacy alias <code>--no-ignore</code>)</li>
+<li><code>--include-hidden</code>: by default cargo will not walk hidden folders.  If this flag
+is provided then it will also walk into those.</li>
+<li><code>-q</code> / <code>--quiet</code>: disables output on most commands.</li>
+<li><code>--help</code>: outputs help information.</li>
+<li><code>--snapshot</code>: when provided limits the operation to a single snapshot.  The
+argument must be the canonical snapshot name which is the absolute path to the
+snapshot file.  For inline snapshots it's the absolute path to the rust file
+with a colon and line number appended (eg: <code>/foo/bar.rs:42</code>).  This parameter
+can be provided multiple times.</li>
+<li><code>--all</code>: tells Cargo Insta to operate on all packages in a crate.</li>
+</ul>
+<h3 id="review"><code>review</code></h3>
+<p>Review is the most important command as it can be used to review all pending
+snapshots.  Pending snapshots are snapshots that changed from the stored
+reference during a test run.</p>
+<p>It scans for all non ignored snapshots (optionally filtered down to individual
+snapshots with <code>--snapshot</code>) and then walks you through all of them.  For each
+snapshot change a diff is shown.  To accept a snapshot change press <code>a</code>, to
+reject <code>r</code> and to skip for now use <code>s</code>.  Diffs can be turned on and off with <code>d</code>
+and auxiliary information can be shown or hidden with <code>i</code>.</p>
+<img src="../review.png" class="snap" alt="screenshot of cargo-insta review">
+<p>When you skip the new snapshot file will be left behind.</p>
+<h3 id="accept"><code>accept</code></h3>
+<p>This operates exactly like <code>review</code> but instead of an interactive review
+all snapshot changes will be accepted.</p>
+<h3 id="reject"><code>reject</code></h3>
+<p>This operates exactly like <code>review</code> but instead of an interactive review
+all snapshot changes will be rejected.</p>
+<h3 id="pending-snapshots"><code>pending-snapshots</code></h3>
+<p>This command returns a list of all snapshots that need reviewing.  This is
+useful when you want to provide editor integrations for insta.  For instance
+this is how the VS Code extension shows the list of pending snapshots.</p>
+<p>When JSON output is used the old and new contents of inline snapshots are
+also returned.</p>
+<p><strong>Options:</strong></p>
+<ul>
+<li><code>--as-json</code>: output the value as JSON instead of human readable.</li>
+</ul>
+<h3 id="test"><code>test</code></h3>
+<p>The test command lets you execute all tests (similar to <code>cargo test</code>) but
+forces all snapshot tests to pass so that they are collected.  It accepts
+the same arguments as the normal <code>cargo test</code> command.</p>
+<p>Additionally extra comments can be passed to <code>cargo test</code> when separated
+with <code>--</code>.</p>
+<p><strong>Options:</strong></p>
+<ul>
+<li><code>-p</code> / <code>--package</code>: selects the package to run tests for.</li>
+<li><code>--no-force-pass</code>: disables the default behavior that forces all snapshot
+tests to pass.</li>
+<li><code>--features</code>: space-separated list of features to activate.</li>
+<li><code>--all-features</code>: activate all available features</li>
+<li><code>--no-default-features</code>: do not activate the <code>default</code> feature</li>
+<li><code>--review</code>: automatically follow up with snapshot review after test run.</li>
+<li><code>--accept</code>: automatically accept all snapshots after test run.</li>
+<li><code>--accept-unseen</code>: like <code>--accept</code> but only accept all new (previously unseen) snapshots.</li>
+<li><code>--keep-pending</code>: do not reject pending snapshots before run.</li>
+<li><code>--force-update-snapshots</code>: update all snapshots even if they are still matching.  This is useful if insta changed the metadata format.</li>
+<li><code>--unreferenced</code>: controls what should happen with unreferenced snapshots.  The default
+is <code>ignore</code>. Valid values are <code>ignore</code>, <code>warn</code>, <code>reject</code>, <code>delete</code> and <code>auto</code>.
+<code>warn</code> will emit a warning if there are unreference snapshots, <code>reject</code> will
+error. <code>delete</code> will delete unreferenced snapshots after the test run.  Finally
+<code>auto</code> behaves like <code>reject</code> in CI and like <code>delete</code> if not run from CI.</li>
+<li><code>--glob-filter</code>: Filters to apply to the insta glob feature</li>
+<li><code>--test-runner</code>: Selects a different test runner (<code>cargo-test</code> or <code>nextest</code>)</li>
+</ul>
+<p>Some other options are directly mirrored from <code>cargo test</code>.</p>
+
+
+
+
+
+        
+          
+        
+
+        
+          <div class="source-hint">
+            Found an issue?
+            You can
+            <a href="https://github.com/mitsuhiko&#x2F;insta-website/edit/main/content/docs&#x2F;cli.md">edit this page</a>
+            on GitHub.
+          </div>
+        
+      </div>
+    </main>
+
+    
+<footer>
+  <span>
+    Created by <a href="https://lucumr.pocoo.org/">Armin Ronacher</a>
+  </span>
+  <span><a href="https://github.com/mitsuhiko/insta">Github</a></span>
+  <span><a href="https://github.com/mitsuhiko/insta/issues">Issues</a></span>
+  <span><a href="https://docs.rs/insta">API Documentation</a></span>
+  <span><a href="/similar/">Similar</a></span>
+  <span><a href="https://crates.io/crates/io">Crate</a></span>
+</footer>
+
+    <script>
+      function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+          item.classList.remove("active");
+        });
+        document
+          .querySelector(".toc a[href$='" + pathname + "#" + heading + "']")
+          .classList.add("active");
+      }
+
+      let currentHeading = "";
+      window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach((item) => {
+          if (item.id !== "") {
+            elementArr[item.id] = item.getBoundingClientRect().top;
+          }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+          if (!elementArr.hasOwnProperty(key)) {
+            continue;
+          }
+          if (elementArr[key] > 0 && elementArr[key] < 300) {
+            if (currentHeading !== key) {
+              highlightNav(key);
+              currentHeading = key;
+            }
+            break;
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

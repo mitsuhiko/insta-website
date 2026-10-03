@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Redactions | Insta Snapshots</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    >
+    <style>
+  :root {
+    /* Primary theme color */
+    --primary-color: #86bbd8;
+    /* Primary theme text color */
+    --primary-text-color: #2f4858;
+    /* Primary theme link color */
+    --primary-link-color: #336699;
+    /* Secondary color: the background body color */
+    --secondary-color: #d0e3ee;
+    --secondary-text-color: #303030;
+    /* Light background */
+    --light-color: #edf6fb;
+    /* Highlight text color of table of content */
+    --toc-highlight-text-color: #336699;
+    --toc-highlight-background-color: var(--light-color);
+  }
+</style>
+
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+      rel="stylesheet"> 
+    <link
+      href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,600&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="https://insta.rs/juice.css">
+    
+      
+      
+    
+    <meta property="title" content="Redactions">
+    <meta property="og:title" content="Redactions">
+    <meta property="og:site_name" content="Insta Snapshots">
+    <meta property="og:image" content="https://insta.rs/logo.png" />
+    <meta name="twitter:site" content="@mitsuhiko">
+    <meta name="twitter:title" content="Redactions" />
+    <meta name="description" content="Redactions
+Cargo Feature: redactions
+For all snapshots created based on serde::Serialize output inst…">
+    <meta name="og:description" content="Redactions
+Cargo Feature: redactions
+For all snapshots created based on serde::Serialize output inst…">
+    <meta name="twitter:description" content="Redactions
+Cargo Feature: redactions
+For all snapshots created based on serde::Serialize output inst…">
+    <meta name="twitter:card" content="summary">
+    
+  </head>
+
+  <body>
+    
+<header>
+   
+<a href="https:&#x2F;&#x2F;insta.rs&#x2F;">
+  <div class="logo">
+    <img src="https://insta.rs/icon.png" alt="logo" />
+    Insta
+  </div>
+</a>
+
+<nav>
+  
+  <a class="nav-item subtitle-text" href="&#x2F;docs&#x2F;">Docs</a>
+  
+  <a class="nav-item subtitle-text" href="&#x2F;changelog&#x2F;">Changelog</a>
+  
+  <a class="nav-item subtitle-text" href="&#x2F;similar&#x2F;">Similar</a>
+  
+  <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;mitsuhiko&#x2F;insta">GitHub</a>
+  
+  <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;insta">Crate</a>
+  
+</nav>
+
+</header>
+
+
+    <main>
+      
+        
+          
+        
+        
+          
+        
+        
+          
+        
+        <label for="toc-toggle" class="toggle-toc"><span>Toggle Navigation</span></label>
+        <input type="checkbox" id="toc-toggle">
+        <div class="toc">
+          <div class="toc-sticky">
+            
+            
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;">Overview</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;quickstart&#x2F;">Getting Started</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;snapshot-types&#x2F;">Snapshot Types</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;serializers&#x2F;">Serializers</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;snapshot-files&#x2F;">Snapshot Files</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext current" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;redactions&#x2F;">Redactions</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;filters&#x2F;">Filters</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;advanced&#x2F;">Advanced Features</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;cmd&#x2F;">Testing CLIs</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;settings&#x2F;">Settings</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;patterns&#x2F;">Patterns</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;cli&#x2F;">Cargo Insta</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;vscode&#x2F;">VS Code Extension</a>
+              </div>
+              
+              
+                
+                <div class="toc-item">
+                  <a class="subtext external" href="https:&#x2F;&#x2F;docs.rs&#x2F;insta">API Docs</a>
+                </div>
+                
+              
+              
+            
+            
+              
+              <hr>
+              
+              
+                <div class="toc-item">
+                  <a class="current" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;redactions&#x2F;#redactions">Redactions</a>
+                </div>
+                
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;redactions&#x2F;#selectors">Selectors</a>
+                  </div>
+                  
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;redactions&#x2F;#static-redactions">Static Redactions</a>
+                  </div>
+                  
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;redactions&#x2F;#dynamic-redactions">Dynamic Redactions</a>
+                  </div>
+                  
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;redactions&#x2F;#sorted-redactions">Sorted Redactions</a>
+                  </div>
+                  
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;redactions&#x2F;#rounded-redactions">Rounded Redactions</a>
+                  </div>
+                  
+                  
+                
+              
+            
+          </div>
+        </div>
+      
+
+      <div class="content text">
+        
+<h1 id="redactions">Redactions</h1>
+<p><strong>Cargo Feature:</strong> <code>redactions</code></p>
+<p>For all snapshots created based on <code>serde::Serialize</code> output <code>insta</code>
+supports redactions.  This permits replacing values with hardcoded other
+values to make snapshots stable when otherwise random or otherwise changing
+values are involved.  Redactions are an optional feature and can be enabled
+with the <code>redactions</code> feature.</p>
+<p>For &quot;redacting&quot; strings you can use the <a href="../filters/">filters feature</a> instead.</p>
+<p>Redactions can be defined as the third argument to those assertion macros by
+using the following syntax:</p>
+<pre data-lang="rust" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-rust "><code class="language-rust" data-lang="rust"><span>insta::assert_yaml_snapshot</span><span style="color:#72ab00;">!</span><span>(</span><span style="color:#72ab00;">...</span><span>, {
+</span><span>    </span><span style="color:#d07711;">&quot;selector&quot; </span><span style="color:#72ab00;">=&gt;</span><span> replacement_value
+</span><span>});
+</span></code></pre>
+<p>They can also be configured <a href="../settings/">via settings</a>.</p>
+<h2 id="selectors">Selectors</h2>
+<p>The following selectors exist:</p>
+<ul>
+<li><code>.key</code>: selects the given key</li>
+<li><code>.$key</code>: indexes into the key of a collection.  This can be useful to redact compound keys.</li>
+<li><code>[&quot;key&quot;]</code>: alternative syntax for keys</li>
+<li><code>[index]</code>: selects the given index in an array</li>
+<li><code>[]</code>: selects all items on an array</li>
+<li><code>[:end]</code>: selects all items up to <code>end</code> (excluding, supports negative indexing)</li>
+<li><code>[start:]</code>: selects all items starting with <code>start</code></li>
+<li><code>[start:end]</code>: selects all items from <code>start</code> to <code>end</code> (end excluding,
+supports negative indexing).</li>
+<li><code>.*</code>: selects all keys on that depth</li>
+<li><code>.**</code>: performs a deep match (zero or more items).  Can only be used once.</li>
+</ul>
+<h2 id="static-redactions">Static Redactions</h2>
+<p>This is an example of simple static assertions:</p>
+<pre data-lang="rust" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-rust "><code class="language-rust" data-lang="rust"><span>#[</span><span style="color:#5597d6;">derive</span><span>(Serialize)]
+</span><span style="color:#668f14;">pub struct </span><span style="color:#c23f31;">User </span><span>{
+</span><span>    </span><span style="color:#5597d6;">id</span><span>: Uuid,
+</span><span>    </span><span style="color:#5597d6;">username</span><span>: String,
+</span><span>    </span><span style="color:#5597d6;">extra</span><span>: HashMap&lt;</span><span style="color:#a2a001;">String</span><span>, </span><span style="color:#a2a001;">String</span><span>&gt;,
+</span><span>}
+</span><span>
+</span><span>insta::assert_yaml_snapshot</span><span style="color:#72ab00;">!</span><span>(</span><span style="color:#72ab00;">&amp;</span><span>User {
+</span><span>    id: Uuid::new_v4(),
+</span><span>    username: </span><span style="color:#d07711;">&quot;john_doe&quot;</span><span>.</span><span style="color:#b39f04;">to_string</span><span>(),
+</span><span>    extra: {
+</span><span>        </span><span style="color:#668f14;">let mut</span><span> map </span><span style="color:#72ab00;">= </span><span>HashMap::new();
+</span><span>        map.</span><span style="color:#b39f04;">insert</span><span>(</span><span style="color:#d07711;">&quot;ssn&quot;</span><span>.</span><span style="color:#b39f04;">to_string</span><span>(), </span><span style="color:#d07711;">&quot;123-123-123&quot;</span><span>.</span><span style="color:#b39f04;">to_string</span><span>());
+</span><span>        map
+</span><span>    },
+</span><span>}, {
+</span><span>    </span><span style="color:#d07711;">&quot;.id&quot; </span><span style="color:#72ab00;">=&gt; </span><span style="color:#d07711;">&quot;[uuid]&quot;</span><span>,
+</span><span>    </span><span style="color:#d07711;">&quot;.extra.ssn&quot; </span><span style="color:#72ab00;">=&gt; </span><span style="color:#d07711;">&quot;[ssn]&quot;
+</span><span>});
+</span></code></pre>
+<h2 id="dynamic-redactions">Dynamic Redactions</h2>
+<p>It's also possible to execute a callback that can produce a new value
+instead of hardcoding a replacement value by using the
+<a href="https://docs.rs/insta/latest/insta/fn.dynamic_redaction.html"><code>dynamic_redaction</code></a> function.  This function
+can also be used to assert that a value follows a specific format before
+redaction:</p>
+<pre data-lang="rust" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-rust "><code class="language-rust" data-lang="rust"><span>insta::assert_yaml_snapshot</span><span style="color:#72ab00;">!</span><span>(</span><span style="color:#72ab00;">&amp;</span><span>User {
+</span><span>    id: Uuid::new_v4(),
+</span><span>    username: </span><span style="color:#d07711;">&quot;john_doe&quot;</span><span>.</span><span style="color:#b39f04;">to_string</span><span>(),
+</span><span>}, {
+</span><span>    </span><span style="color:#d07711;">&quot;.id&quot; </span><span style="color:#72ab00;">=&gt; </span><span>insta::dynamic_redaction(|</span><span style="color:#5597d6;">value</span><span>, </span><span style="color:#5597d6;">_path</span><span>| {
+</span><span>        </span><span style="color:#7f8989;">// assert that the value looks like a uuid here
+</span><span>        </span><span style="color:#a2a001;">assert_eq!</span><span>(value
+</span><span>            .</span><span style="color:#b39f04;">as_str</span><span>()
+</span><span>            .</span><span style="color:#b39f04;">unwrap</span><span>()
+</span><span>            .</span><span style="color:#b39f04;">chars</span><span>()
+</span><span>            .</span><span style="color:#b39f04;">filter</span><span>(|</span><span style="color:#72ab00;">&amp;</span><span style="color:#5597d6;">c</span><span>| c </span><span style="color:#72ab00;">== </span><span style="color:#d07711;">&#39;-&#39;</span><span>)
+</span><span>            .</span><span style="color:#b39f04;">count</span><span>(),
+</span><span>            </span><span style="color:#b3933a;">4
+</span><span>        );
+</span><span>        </span><span style="color:#d07711;">&quot;[uuid]&quot;
+</span><span>    }),
+</span><span>});
+</span></code></pre>
+<p>The two arguments to the callback are of type <a href="https://docs.rs/insta/latest/insta/internals/enum.Content.html"><code>Content</code></a>
+and <a href="https://docs.rs/insta/latest/insta/internals/struct.ContentPath.html"><code>ContentPath</code></a>.  You can find
+more information in the API documentation about how they work.</p>
+<h2 id="sorted-redactions">Sorted Redactions</h2>
+<p>A special feature of the redaction support is the ability to sort a map or sequence at a selector.
+This is particularly useful if you're working with a <code>HashSet</code> or something similar that has non
+deterministic serialization order but you need to assert on it.  As <code>serde</code> does not let insta
+distinguish between a vector and a set, no automatic ordering can be provided without causing issues
+for the general case.</p>
+<p>For sorted redactions you can use the <a href="https://docs.rs/insta/latest/insta/fn.sorted_redaction.html"><code>sorted_redaction</code></a> function:</p>
+<pre data-lang="rust" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#72ab00;">use </span><span>std::collections::HashSet;
+</span><span style="color:#72ab00;">use </span><span>serde::Serialize;
+</span><span>
+</span><span>#[</span><span style="color:#5597d6;">derive</span><span>(Debug, Serialize)]
+</span><span style="color:#668f14;">pub struct </span><span style="color:#c23f31;">User </span><span>{
+</span><span>    </span><span style="color:#5597d6;">id</span><span>: </span><span style="color:#668f14;">u64</span><span>,
+</span><span>    </span><span style="color:#5597d6;">username</span><span>: String,
+</span><span>    </span><span style="color:#5597d6;">flags</span><span>: HashSet&lt;</span><span style="color:#a2a001;">String</span><span>&gt;,
+</span><span>}
+</span><span>
+</span><span>insta::assert_json_snapshot</span><span style="color:#72ab00;">!</span><span>(
+</span><span>    </span><span style="color:#72ab00;">&amp;</span><span>User {
+</span><span>        id: </span><span style="color:#b3933a;">122</span><span>,
+</span><span>        username: </span><span style="color:#d07711;">&quot;jason_doe&quot;</span><span>.</span><span style="color:#b39f04;">to_string</span><span>(),
+</span><span>        flags: </span><span style="color:#a2a001;">vec!</span><span>[</span><span style="color:#d07711;">&quot;zzz&quot;</span><span>.</span><span style="color:#b39f04;">into</span><span>(), </span><span style="color:#d07711;">&quot;foo&quot;</span><span>.</span><span style="color:#b39f04;">into</span><span>(), </span><span style="color:#d07711;">&quot;aha&quot;</span><span>.</span><span style="color:#b39f04;">into</span><span>(), </span><span style="color:#d07711;">&quot;is_admin&quot;</span><span>.</span><span style="color:#b39f04;">into</span><span>()]
+</span><span>            .</span><span style="color:#b39f04;">into_iter</span><span>()
+</span><span>            .</span><span style="color:#b39f04;">collect</span><span>(),
+</span><span>    },
+</span><span>    {
+</span><span>        </span><span style="color:#d07711;">&quot;.flags&quot; </span><span style="color:#72ab00;">=&gt; </span><span>insta::sorted_redaction()
+</span><span>    }
+</span><span>);
+</span></code></pre>
+<h2 id="rounded-redactions">Rounded Redactions</h2>
+<p>For floating point values it can be useful to round them to certain number of decimal
+places.  For this you can use the <a href="https://docs.rs/insta/latest/insta/fn.rounded_redaction.html"><code>rounded_redaction</code></a> function:</p>
+<pre data-lang="rust" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#72ab00;">use </span><span>serde::Serialize;
+</span><span>
+</span><span>#[</span><span style="color:#5597d6;">derive</span><span>(Debug, Serialize)]
+</span><span style="color:#668f14;">pub struct </span><span style="color:#c23f31;">Point </span><span>{
+</span><span>    </span><span style="color:#5597d6;">x</span><span>: </span><span style="color:#668f14;">f64</span><span>,
+</span><span>    </span><span style="color:#5597d6;">y</span><span>: </span><span style="color:#668f14;">f64</span><span>,
+</span><span>}
+</span><span>
+</span><span>insta::assert_json_snapshot</span><span style="color:#72ab00;">!</span><span>(
+</span><span>    </span><span style="color:#72ab00;">&amp;</span><span>Point { x: </span><span style="color:#b3933a;">0.4223214</span><span>, y: </span><span style="color:#b3933a;">0.424124 </span><span>},
+</span><span>    {
+</span><span>        </span><span style="color:#d07711;">&quot;.*&quot; </span><span style="color:#72ab00;">=&gt; </span><span>insta::rounded_redaction(</span><span style="color:#b3933a;">3</span><span>)
+</span><span>    }
+</span><span>);
+</span></code></pre>
+
+
+
+
+
+        
+          
+        
+
+        
+          <div class="source-hint">
+            Found an issue?
+            You can
+            <a href="https://github.com/mitsuhiko&#x2F;insta-website/edit/main/content/docs&#x2F;redactions.md">edit this page</a>
+            on GitHub.
+          </div>
+        
+      </div>
+    </main>
+
+    
+<footer>
+  <span>
+    Created by <a href="https://lucumr.pocoo.org/">Armin Ronacher</a>
+  </span>
+  <span><a href="https://github.com/mitsuhiko/insta">Github</a></span>
+  <span><a href="https://github.com/mitsuhiko/insta/issues">Issues</a></span>
+  <span><a href="https://docs.rs/insta">API Documentation</a></span>
+  <span><a href="/similar/">Similar</a></span>
+  <span><a href="https://crates.io/crates/io">Crate</a></span>
+</footer>
+
+    <script>
+      function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+          item.classList.remove("active");
+        });
+        document
+          .querySelector(".toc a[href$='" + pathname + "#" + heading + "']")
+          .classList.add("active");
+      }
+
+      let currentHeading = "";
+      window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach((item) => {
+          if (item.id !== "") {
+            elementArr[item.id] = item.getBoundingClientRect().top;
+          }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+          if (!elementArr.hasOwnProperty(key)) {
+            continue;
+          }
+          if (elementArr[key] > 0 && elementArr[key] < 300) {
+            if (currentHeading !== key) {
+              highlightNav(key);
+              currentHeading = key;
+            }
+            break;
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
