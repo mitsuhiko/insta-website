@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Serializers | Insta Snapshots</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    >
+    <style>
+  :root {
+    /* Primary theme color */
+    --primary-color: #86bbd8;
+    /* Primary theme text color */
+    --primary-text-color: #2f4858;
+    /* Primary theme link color */
+    --primary-link-color: #336699;
+    /* Secondary color: the background body color */
+    --secondary-color: #d0e3ee;
+    --secondary-text-color: #303030;
+    /* Light background */
+    --light-color: #edf6fb;
+    /* Highlight text color of table of content */
+    --toc-highlight-text-color: #336699;
+    --toc-highlight-background-color: var(--light-color);
+  }
+</style>
+
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+      rel="stylesheet"> 
+    <link
+      href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,600&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="https://insta.rs/juice.css">
+    
+      
+      
+    
+    <meta property="title" content="Serializers">
+    <meta property="og:title" content="Serializers">
+    <meta property="og:site_name" content="Insta Snapshots">
+    <meta property="og:image" content="https://insta.rs/logo.png" />
+    <meta name="twitter:site" content="@mitsuhiko">
+    <meta name="twitter:title" content="Serializers" />
+    <meta name="description" content="Serializers
+The best supported snapshot experience is based on serde
+because it enables functionalit…">
+    <meta name="og:description" content="Serializers
+The best supported snapshot experience is based on serde
+because it enables functionalit…">
+    <meta name="twitter:description" content="Serializers
+The best supported snapshot experience is based on serde
+because it enables functionalit…">
+    <meta name="twitter:card" content="summary">
+    
+  </head>
+
+  <body>
+    
+<header>
+   
+<a href="https:&#x2F;&#x2F;insta.rs&#x2F;">
+  <div class="logo">
+    <img src="https://insta.rs/icon.png" alt="logo" />
+    Insta
+  </div>
+</a>
+
+<nav>
+  
+  <a class="nav-item subtitle-text" href="&#x2F;docs&#x2F;">Docs</a>
+  
+  <a class="nav-item subtitle-text" href="&#x2F;changelog&#x2F;">Changelog</a>
+  
+  <a class="nav-item subtitle-text" href="&#x2F;similar&#x2F;">Similar</a>
+  
+  <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;mitsuhiko&#x2F;insta">GitHub</a>
+  
+  <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;insta">Crate</a>
+  
+</nav>
+
+</header>
+
+
+    <main>
+      
+        
+          
+        
+        
+          
+        
+        
+          
+        
+        <label for="toc-toggle" class="toggle-toc"><span>Toggle Navigation</span></label>
+        <input type="checkbox" id="toc-toggle">
+        <div class="toc">
+          <div class="toc-sticky">
+            
+            
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;">Overview</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;quickstart&#x2F;">Getting Started</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;snapshot-types&#x2F;">Snapshot Types</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext current" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;serializers&#x2F;">Serializers</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;snapshot-files&#x2F;">Snapshot Files</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;redactions&#x2F;">Redactions</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;filters&#x2F;">Filters</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;advanced&#x2F;">Advanced Features</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;cmd&#x2F;">Testing CLIs</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;settings&#x2F;">Settings</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;patterns&#x2F;">Patterns</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;cli&#x2F;">Cargo Insta</a>
+              </div>
+              
+              <div class="toc-item">
+                <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;vscode&#x2F;">VS Code Extension</a>
+              </div>
+              
+              
+                
+                <div class="toc-item">
+                  <a class="subtext external" href="https:&#x2F;&#x2F;docs.rs&#x2F;insta">API Docs</a>
+                </div>
+                
+              
+              
+            
+            
+              
+              <hr>
+              
+              
+                <div class="toc-item">
+                  <a class="current" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;serializers&#x2F;#serializers">Serializers</a>
+                </div>
+                
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;serializers&#x2F;#debug">Debug</a>
+                  </div>
+                  
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;serializers&#x2F;#yaml">YAML</a>
+                  </div>
+                  
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;serializers&#x2F;#json">JSON</a>
+                  </div>
+                  
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;serializers&#x2F;#toml">TOML</a>
+                  </div>
+                  
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;serializers&#x2F;#ron">RON</a>
+                  </div>
+                  
+                  
+                  <div class="toc-item">
+                    <a class="subtext" href="https:&#x2F;&#x2F;insta.rs&#x2F;docs&#x2F;serializers&#x2F;#csv">CSV</a>
+                  </div>
+                  
+                  
+                
+              
+            
+          </div>
+        </div>
+      
+
+      <div class="content text">
+        
+<h1 id="serializers">Serializers</h1>
+<p>The best supported snapshot experience is based on <a href="https://serde.rs/">serde</a>
+because it enables functionality such as redactions.  When you assert on serde
+serializable types you can chose a variety of serialization formats.  The
+example used for all of these is a list of two structs.</p>
+<h2 id="debug">Debug</h2>
+<p>This is the only serializer in insta that does not use <code>serde</code> behind the scenes
+but instead uses the default <code>std::fmt::Debug</code> representation of a value.
+Because this is not based on the <code>Serialize</code> trait this serializer does not
+support redactions.  To use it use the <a href="https://docs.rs/insta/latest/insta/macro.assert_debug_snapshot.html"><code>assert_debug_snapshot!</code></a>
+macro:</p>
+<pre data-lang="rust" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-rust "><code class="language-rust" data-lang="rust"><span>insta::assert_debug_snapshot</span><span style="color:#72ab00;">!</span><span>(</span><span style="color:#72ab00;">&amp;</span><span>user_list);
+</span></code></pre>
+<pre data-lang="javascript" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-javascript "><code class="language-javascript" data-lang="javascript"><span>[
+</span><span>    </span><span style="color:#c23f31;">User</span><span>(
+</span><span>        </span><span style="color:#5597d6;">id</span><span>: </span><span style="color:#b3933a;">1</span><span>,
+</span><span>        </span><span style="color:#5597d6;">email</span><span>: </span><span style="color:#d07711;">&quot;root@example.com&quot;</span><span>,
+</span><span>        </span><span style="color:#5597d6;">is_admin</span><span>: </span><span style="color:#b3933a;">true</span><span>,
+</span><span>    ),
+</span><span>    </span><span style="color:#c23f31;">User</span><span>(
+</span><span>        </span><span style="color:#5597d6;">id</span><span>: </span><span style="color:#b3933a;">2</span><span>,
+</span><span>        </span><span style="color:#5597d6;">email</span><span>: </span><span style="color:#d07711;">&quot;user@example.com&quot;</span><span>,
+</span><span>        </span><span style="color:#5597d6;">is_admin</span><span>: </span><span style="color:#b3933a;">false</span><span>,
+</span><span>    ),
+</span><span>]
+</span></code></pre>
+<p>It's generally recommended to use the <a href="https://insta.rs/docs/serializers/#ron">RON</a> serializer instead if redactions
+are wanted.</p>
+<h2 id="yaml">YAML</h2>
+<p>This serializer is available by default and the recommended one for most
+situations.  It's available through the <a href="https://docs.rs/insta/latest/insta/macro.assert_yaml_snapshot.html"><code>assert_yaml_snapshot!</code></a>
+macro:</p>
+<pre data-lang="rust" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-rust "><code class="language-rust" data-lang="rust"><span>insta::assert_yaml_snapshot</span><span style="color:#72ab00;">!</span><span>(</span><span style="color:#72ab00;">&amp;</span><span>user_list);
+</span></code></pre>
+<pre data-lang="yaml" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-yaml "><code class="language-yaml" data-lang="yaml"><span>- </span><span style="color:#7f902a;">id</span><span>: </span><span style="color:#b3933a;">1
+</span><span>  </span><span style="color:#7f902a;">email</span><span>: </span><span style="color:#d07711;">root@example.com
+</span><span>  </span><span style="color:#7f902a;">is_admin</span><span>: </span><span style="color:#b3933a;">true
+</span><span>- </span><span style="color:#7f902a;">id</span><span>: </span><span style="color:#b3933a;">2
+</span><span>  </span><span style="color:#7f902a;">email</span><span>: </span><span style="color:#d07711;">user@example.com
+</span><span>  </span><span style="color:#7f902a;">is_admin</span><span>: </span><span style="color:#b3933a;">false
+</span></code></pre>
+<p>This serializer is recommended because YAML is human readable and excellent
+at diffing because it is line based.</p>
+<h2 id="json">JSON</h2>
+<p>This serializer is also available by default but usually not recommended.
+It's available through the <a href="https://docs.rs/insta/latest/insta/macro.assert_json_snapshot.html"><code>assert_json_snapshot!</code></a>
+macro:</p>
+<pre data-lang="rust" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-rust "><code class="language-rust" data-lang="rust"><span>insta::assert_json_snapshot</span><span style="color:#72ab00;">!</span><span>(</span><span style="color:#72ab00;">&amp;</span><span>user_list);
+</span></code></pre>
+<pre data-lang="json" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-json "><code class="language-json" data-lang="json"><span>[
+</span><span>  {
+</span><span>    </span><span style="color:#d07711;">&quot;id&quot;</span><span>: </span><span style="color:#b3933a;">1</span><span>,
+</span><span>    </span><span style="color:#d07711;">&quot;email&quot;</span><span>: </span><span style="color:#d07711;">&quot;root@example.com&quot;</span><span>,
+</span><span>    </span><span style="color:#d07711;">&quot;is_admin&quot;</span><span>: </span><span style="color:#b3933a;">true
+</span><span>  },
+</span><span>  {
+</span><span>    </span><span style="color:#d07711;">&quot;id&quot;</span><span>: </span><span style="color:#b3933a;">2</span><span>,
+</span><span>    </span><span style="color:#d07711;">&quot;email&quot;</span><span>: </span><span style="color:#d07711;">&quot;user@example.com&quot;</span><span>,
+</span><span>    </span><span style="color:#d07711;">&quot;is_admin&quot;</span><span>: </span><span style="color:#b3933a;">false
+</span><span>  }
+</span><span>]
+</span></code></pre>
+<p>The JSON serializer is mainly useful if you are working with JSON APIs and you
+want to serialize the responses exactly as they happen from the API.  However
+JSON itself is not ideal for diffs which makes it slightly less nice to work
+with compared to YAML.</p>
+<p>There is also a second option that produces a compact (single line) snapshot if it fits there (up to 120 characters):</p>
+<pre data-lang="rust" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-rust "><code class="language-rust" data-lang="rust"><span>insta::assert_compact_json_snapshot</span><span style="color:#72ab00;">!</span><span>(</span><span style="color:#72ab00;">&amp;</span><span>range);
+</span></code></pre>
+<pre data-lang="json" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-json "><code class="language-json" data-lang="json"><span>[</span><span style="color:#b3933a;">1</span><span>, </span><span style="color:#b3933a;">2</span><span>, </span><span style="color:#b3933a;">3</span><span>, </span><span style="color:#b3933a;">4</span><span>, </span><span style="color:#b3933a;">5</span><span>]
+</span></code></pre>
+<h2 id="toml">TOML</h2>
+<p><a href="https://github.com/toml-lang/toml">TOML</a> is a serialization format which is
+commonly used in configuration files.  It diffs well but unfortunately it cannot
+represent all values that a serde serializer can produce.  As such it's not
+enabled by default.</p>
+<p>You need to activate it with the <code>toml</code> feature.  Once enabled it gives you
+the <a href="https://docs.rs/insta/latest/insta/macro.assert_toml_snapshot.html"><code>assert_toml_snapshot!</code></a> macro:</p>
+<pre data-lang="rust" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-rust "><code class="language-rust" data-lang="rust"><span>insta::assert_toml_snapshot</span><span style="color:#72ab00;">!</span><span>(</span><span style="color:#72ab00;">&amp;</span><span>user_list_in_struct);
+</span></code></pre>
+<pre data-lang="toml" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[[</span><span style="color:#6486ab;">users</span><span>]]
+</span><span style="color:#7f902a;">id </span><span>= </span><span style="color:#b3933a;">1
+</span><span style="color:#7f902a;">email </span><span>= </span><span style="color:#d07711;">&#39;root@example.com&#39;
+</span><span style="color:#7f902a;">is_admin </span><span>= </span><span style="color:#b3933a;">true
+</span><span>
+</span><span>[[</span><span style="color:#6486ab;">users</span><span>]]
+</span><span style="color:#7f902a;">id </span><span>= </span><span style="color:#b3933a;">2
+</span><span style="color:#7f902a;">email </span><span>= </span><span style="color:#d07711;">&#39;user@example.com&#39;
+</span><span style="color:#7f902a;">is_admin </span><span>= </span><span style="color:#b3933a;">false
+</span></code></pre>
+<p>(Note that this example encloses the list in a top level struct as TOML
+cannot support toplevel arrays.)</p>
+<h2 id="ron">RON</h2>
+<p><a href="https://github.com/ron-rs/ron">RON</a> is a serialization format that contains
+Rust type names similar to <code>Debug</code>.  It's excellent if you also need to assert
+on the types of values.</p>
+<p>You need to activate it with the <code>ron</code> feature.  Once enabled it gives you
+the <a href="https://docs.rs/insta/latest/insta/macro.assert_ron_snapshot.html"><code>assert_ron_snapshot!</code></a> macro:</p>
+<pre data-lang="rust" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-rust "><code class="language-rust" data-lang="rust"><span>insta::assert_ron_snapshot</span><span style="color:#72ab00;">!</span><span>(</span><span style="color:#72ab00;">&amp;</span><span>user_list);
+</span></code></pre>
+<pre data-lang="javascript" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-javascript "><code class="language-javascript" data-lang="javascript"><span>[
+</span><span>  </span><span style="color:#c23f31;">User</span><span>(
+</span><span>    </span><span style="color:#5597d6;">id</span><span>: </span><span style="color:#b3933a;">1</span><span>,
+</span><span>    </span><span style="color:#5597d6;">email</span><span>: </span><span style="color:#d07711;">&quot;root@example.com&quot;</span><span>,
+</span><span>    </span><span style="color:#5597d6;">is_admin</span><span>: </span><span style="color:#b3933a;">true</span><span>,
+</span><span>  ),
+</span><span>  </span><span style="color:#c23f31;">User</span><span>(
+</span><span>    </span><span style="color:#5597d6;">id</span><span>: </span><span style="color:#b3933a;">2</span><span>,
+</span><span>    </span><span style="color:#5597d6;">email</span><span>: </span><span style="color:#d07711;">&quot;user@example.com&quot;</span><span>,
+</span><span>    </span><span style="color:#5597d6;">is_admin</span><span>: </span><span style="color:#b3933a;">false</span><span>,
+</span><span>  ),
+</span><span>]
+</span></code></pre>
+<h2 id="csv">CSV</h2>
+<p><a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a> is also available as
+serialization format but it only works for some types of values.</p>
+<p>You need to activate it with the <code>csv</code> feature.  Once enabled it gives you
+the <a href="https://docs.rs/insta/latest/insta/macro.assert_csv_snapshot.html"><code>assert_csv_snapshot!</code></a> macro:</p>
+<pre data-lang="rust" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-rust "><code class="language-rust" data-lang="rust"><span>insta::assert_csv_snapshot</span><span style="color:#72ab00;">!</span><span>(</span><span style="color:#72ab00;">&amp;</span><span>user);
+</span></code></pre>
+<pre data-lang="csv" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-csv "><code class="language-csv" data-lang="csv"><span style="color:#668f14;">id</span><span style="color:#72ab00;">,</span><span style="color:#668f14;">email</span><span style="color:#72ab00;">,</span><span style="color:#668f14;">is_admin
+</span><span style="color:#b3933a;">1</span><span style="color:#72ab00;">,</span><span style="color:#668f14;">root@example.com</span><span style="color:#72ab00;">,</span><span style="color:#668f14;">true
+</span></code></pre>
+<p>(Note that this example uses a single item in the list as the CSV feature does
+not yet support multiple values.)</p>
+
+
+
+
+
+        
+          
+        
+
+        
+          <div class="source-hint">
+            Found an issue?
+            You can
+            <a href="https://github.com/mitsuhiko&#x2F;insta-website/edit/main/content/docs&#x2F;serializers.md">edit this page</a>
+            on GitHub.
+          </div>
+        
+      </div>
+    </main>
+
+    
+<footer>
+  <span>
+    Created by <a href="https://lucumr.pocoo.org/">Armin Ronacher</a>
+  </span>
+  <span><a href="https://github.com/mitsuhiko/insta">Github</a></span>
+  <span><a href="https://github.com/mitsuhiko/insta/issues">Issues</a></span>
+  <span><a href="https://docs.rs/insta">API Documentation</a></span>
+  <span><a href="/similar/">Similar</a></span>
+  <span><a href="https://crates.io/crates/io">Crate</a></span>
+</footer>
+
+    <script>
+      function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+          item.classList.remove("active");
+        });
+        document
+          .querySelector(".toc a[href$='" + pathname + "#" + heading + "']")
+          .classList.add("active");
+      }
+
+      let currentHeading = "";
+      window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach((item) => {
+          if (item.id !== "") {
+            elementArr[item.id] = item.getBoundingClientRect().top;
+          }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+          if (!elementArr.hasOwnProperty(key)) {
+            continue;
+          }
+          if (elementArr[key] > 0 && elementArr[key] < 300) {
+            if (currentHeading !== key) {
+              highlightNav(key);
+              currentHeading = key;
+            }
+            break;
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
